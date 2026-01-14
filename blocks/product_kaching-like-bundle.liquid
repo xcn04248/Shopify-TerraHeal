@@ -1,0 +1,218 @@
+{% comment %}
+  Theme Block: Kaching-like Bundle (for Shrine Pro main-product via {% content_for 'blocks' %})
+{% endcomment %}
+
+<div class="kb"
+  data-kb-root
+  data-money-format="{{ shop.money_format | escape }}"
+  data-gift-variant-id="{{ block.settings.gift_variant_id | strip }}"
+  data-gift-qty="{{ block.settings.gift_qty }}"
+  {{ block.shopify_attributes }}
+>
+  <h3 class="kb__title">
+    <span></span>
+    <span>{{ block.settings.heading }}</span>
+    <span></span>
+  </h3>
+
+  <div class="kb__offers">
+
+    {%- comment -%} Offer 1 {%- endcomment -%}
+    <label class="kb__offer {% if block.settings.default_offer == 'offer1' %}is-selected{% endif %}" data-kb-offer data-offer="1">
+      <input class="kb__radio" type="radio" name="kb_offer_{{ block.id }}" {% if block.settings.default_offer == 'offer1' %}checked{% endif %} data-kb-radio>
+      <div class="kb__card">
+        <div class="kb__top">
+          <div class="kb__left">
+            <div class="kb__mainline">
+              <div class="kb__label">{{ block.settings.offer1_title }}</div>
+              {% if block.settings.offer1_pill != blank %}
+                <span class="kb__pill">{{ block.settings.offer1_pill }}</span>
+              {% endif %}
+            </div>
+            {% if block.settings.offer1_subtext != blank %}
+              <div class="kb__subtext">{{ block.settings.offer1_subtext }}</div>
+            {% endif %}
+          </div>
+          <div class="kb__price">{{ block.settings.offer1_display_price }}</div>
+        </div>
+
+        <script type="application/json" data-kb-config>
+          {
+            "offer": 1,
+            "qty": {{ block.settings.offer1_qty | json }},
+            "addGift": false
+          }
+        </script>
+      </div>
+    </label>
+
+    {%- comment -%} Offer 2 {%- endcomment -%}
+    <label class="kb__offer {% if block.settings.default_offer == 'offer2' %}is-selected{% endif %}" data-kb-offer data-offer="2">
+      <input class="kb__radio" type="radio" name="kb_offer_{{ block.id }}" {% if block.settings.default_offer == 'offer2' %}checked{% endif %} data-kb-radio>
+      <div class="kb__card">
+        {% if block.settings.offer2_badge != blank %}
+          <div class="kb__badge">{{ block.settings.offer2_badge }}</div>
+        {% endif %}
+
+        <div class="kb__top">
+          <div class="kb__left">
+            <div class="kb__mainline">
+              <div class="kb__label">{{ block.settings.offer2_title }}</div>
+              {% if block.settings.offer2_pill != blank %}
+                <span class="kb__pill">{{ block.settings.offer2_pill }}</span>
+              {% endif %}
+            </div>
+            {% if block.settings.offer2_subtext != blank %}
+              <div class="kb__subtext">{{ block.settings.offer2_subtext }}</div>
+            {% endif %}
+          </div>
+          <div class="kb__price">{{ block.settings.offer2_display_price }}</div>
+        </div>
+
+        {% if block.settings.show_gift_in_offer2 and block.settings.gift_variant_id != blank and block.settings.gift_text != blank %}
+          <div class="kb__giftbar kb__giftbar--light">
+            <span class="kb__giftimg">🛏️</span>
+            <span class="kb__gifttext">{{ block.settings.gift_text }}</span>
+          </div>
+        {% endif %}
+
+        {%- if block.settings.offer2_per_unit_variants -%}
+            <div class="kb__items" data-kb-unit-variants
+                data-handle="{{ product.handle | escape }}"
+                data-units="{{ block.settings.offer2_qty }}"
+            >
+                <div class="kb__items-loading">Loading…</div>
+            </div>
+        {%- endif -%}
+
+        <script type="application/json" data-kb-config>
+          {
+            "offer": 2,
+            "qty": {{ block.settings.offer2_qty | json }},
+            "addGift": {{ block.settings.show_gift_in_offer2 | json }}
+          }
+        </script>
+      </div>
+    </label>
+
+    {%- comment -%} Offer 3 (expanded bundle) {%- endcomment -%}
+    <label class="kb__offer {% if block.settings.default_offer == 'offer3' %}is-selected{% endif %}" data-kb-offer data-offer="3">
+      <input class="kb__radio" type="radio" name="kb_offer_{{ block.id }}" {% if block.settings.default_offer == 'offer3' %}checked{% endif %} data-kb-radio>
+      <div class="kb__card">
+        {% if block.settings.offer3_badge != blank %}
+          <div class="kb__badge">{{ block.settings.offer3_badge }}</div>
+        {% endif %}
+
+        <div class="kb__top">
+          <div class="kb__left">
+            <div class="kb__mainline">
+              <div class="kb__label">{{ block.settings.offer3_title }}</div>
+              {% if block.settings.offer3_pill != blank %}
+                <span class="kb__pill">{{ block.settings.offer3_pill }}</span>
+              {% endif %}
+            </div>
+            {% if block.settings.offer3_subtext != blank %}
+              <div class="kb__subtext">{{ block.settings.offer3_subtext }}</div>
+            {% endif %}
+          </div>
+          <div class="kb__price">{{ block.settings.offer3_display_price }}</div>
+        </div>
+
+        <div class="kb__items"
+          data-kb-items
+          data-item1-handle="{{ product.handle | escape }}"
+          data-item1-qty="{{ block.settings.offer3_item1_qty }}"
+          data-item2-handle="{{ block.settings.offer3_item2_handle | strip | escape }}"
+          data-item2-qty="{{ block.settings.offer3_item2_qty }}"
+          data-item2-fixed-variant-id="{{ block.settings.offer3_item2_fixed_variant_id | strip }}"
+        >
+          <div class="kb__items-loading">Loading…</div>
+        </div>
+
+        {% if block.settings.gift_variant_id != blank and block.settings.gift_text != blank %}
+          <div class="kb__giftbar kb__giftbar--dark">
+            <span class="kb__giftimg">🛏️</span>
+            <span class="kb__gifttext">{{ block.settings.gift_text }}</span>
+          </div>
+        {% endif %}
+
+        <script type="application/json" data-kb-config>
+          {
+            "offer": 3,
+            "qty": {{ block.settings.offer3_item1_qty | json }},
+            "addGift": true,
+            "item2Handle": {{ block.settings.offer3_item2_handle | strip | json }},
+            "item2Qty": {{ block.settings.offer3_item2_qty | json }},
+            "item2FixedVariantId": {{ block.settings.offer3_item2_fixed_variant_id | strip | json }}
+          }
+        </script>
+      </div>
+    </label>
+
+  </div>
+
+  <button class="kb__btn" type="button" data-kb-add>{{ block.settings.button_text }}</button>
+  <div class="kb__note" data-kb-note></div>
+</div>
+
+{%- comment -%} Load assets once {%- endcomment -%}
+{% unless content_for_header contains 'kaching-like-bundle.js' %}
+  {{ 'kaching-like-bundle.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'kaching-like-bundle.js' | asset_url }}" defer></script>
+{% endunless %}
+
+{% schema %}
+{
+  "name": "Kaching-like Bundle",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "BUNDLE & SAVE" },
+    { "type": "text", "id": "button_text", "label": "Button text", "default": "Add to cart" },
+
+    {
+      "type": "select",
+      "id": "default_offer",
+      "label": "Default selected offer",
+      "default": "offer3",
+      "options": [
+        { "value": "offer1", "label": "Offer 1" },
+        { "value": "offer2", "label": "Offer 2" },
+        { "value": "offer3", "label": "Offer 3" }
+      ]
+    },
+
+    { "type": "header", "content": "Offer 1" },
+    { "type": "text", "id": "offer1_title", "label": "Title", "default": "Buy 1 Mat" },
+    { "type": "text", "id": "offer1_pill", "label": "Pill text" },
+    { "type": "text", "id": "offer1_subtext", "label": "Subtext" },
+    { "type": "text", "id": "offer1_display_price", "label": "Display price", "default": "€78,95" },
+    { "type": "number", "id": "offer1_qty", "label": "Main product qty", "default": 1 },
+
+    { "type": "header", "content": "Offer 2" },
+    { "type": "text", "id": "offer2_title", "label": "Title", "default": "Buy 2 Mats" },
+    { "type": "text", "id": "offer2_pill", "label": "Pill text", "default": "FREE Shipping" },
+    { "type": "text", "id": "offer2_badge", "label": "Badge text", "default": "Most Popular" },
+    { "type": "text", "id": "offer2_subtext", "label": "Subtext" },
+    { "type": "text", "id": "offer2_display_price", "label": "Display price", "default": "€157,90" },
+    { "type": "number", "id": "offer2_qty", "label": "Main product qty", "default": 2 },
+    { "type": "checkbox", "id": "show_gift_in_offer2", "label": "Show gift bar on offer 2", "default": true },
+    { "type": "checkbox", "id": "offer2_per_unit_variants", "label": "Offer 2: per-unit variant selectors (#1/#2)", "default": true },
+
+    { "type": "header", "content": "Offer 3 (Expanded bundle)" },
+    { "type": "text", "id": "offer3_title", "label": "Title", "default": "Buy the Grounding Bundle" },
+    { "type": "text", "id": "offer3_pill", "label": "Pill text", "default": "FREE Shipping" },
+    { "type": "text", "id": "offer3_badge", "label": "Badge text", "default": "OVER 60% OFF" },
+    { "type": "text", "id": "offer3_subtext", "label": "Subtext" },
+    { "type": "text", "id": "offer3_display_price", "label": "Display price", "default": "€175,90" },
+
+    { "type": "number", "id": "offer3_item1_qty", "label": "Item 1 qty (main product)", "default": 1 },
+    { "type": "text", "id": "offer3_item2_handle", "label": "Item 2 product handle (e.g. terra-grounding-flat-sheet)", "default": "terra-grounding-flat-sheet" },
+    { "type": "number", "id": "offer3_item2_qty", "label": "Item 2 qty", "default": 1 },
+    { "type": "text", "id": "offer3_item2_fixed_variant_id", "label": "Item 2 fixed variant ID (numeric)" },
+
+    { "type": "header", "content": "Gift" },
+    { "type": "text", "id": "gift_variant_id", "label": "Gift variant ID (numeric)", "default": "0" },
+    { "type": "number", "id": "gift_qty", "label": "Gift qty", "default": 1 },
+    { "type": "text", "id": "gift_text", "label": "Gift text", "default": "+ FREE Grounding Pillow Case ($100 Value)" }
+  ]
+}
+{% endschema %}
