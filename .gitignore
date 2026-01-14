@@ -1,7 +1,0 @@
-node_modules/
-.DS_Store
-*.log
-config/settings_data.json
-assets/*.liquid
-!assets/*.js.liquid
-!assets/*.css.liquid
