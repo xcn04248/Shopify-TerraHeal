@@ -1,0 +1,81 @@
+{% schema %}
+{
+  "name": "Sticky Footer CTA",
+  "settings": [
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "GET MY SPECIAL DEAL NOW!"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+     {
+      "type": "color",
+      "id": "btn_color",
+      "label": "Button Color",
+      "default": "#00c300"
+    },
+    {
+        "type": "color",
+        "id": "btn_text_color",
+        "label": "Button Text Color",
+        "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sticky Footer CTA"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .sticky-footer-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    padding: 15px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    background-color: {{ section.settings.bg_color }};
+    display: flex; /* Or display: none initially based on scroll logic if desired */
+    justify-content: center;
+  }
+  .sticky-footer-cta a.button {
+    background-color: {{ section.settings.btn_color }};
+    color: {{ section.settings.btn_text_color }};
+    font-weight: bold;
+    font-size: 18px;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+  }
+  .sticky-footer-cta a.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
+</style>
+
+<div class="sticky-footer-cta">
+  <a href="{{ section.settings.button_link }}" class="button">
+    {{ section.settings.button_text }}
+  </a>
+</div>

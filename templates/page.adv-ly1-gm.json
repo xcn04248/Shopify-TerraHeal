@@ -1,0 +1,63 @@
+{
+    "sections": {
+        "lp_header": {
+            "type": "lp-header",
+            "settings": {
+                "advertorial_label": "Advertorial",
+                "right_label": "Consumer Health Report",
+                "bg_color": "#000000",
+                "text_color": "#ffffff"
+            }
+        },
+        "main_content": {
+            "type": "rich-text",
+            "blocks": {
+                "headline": {
+                    "type": "heading",
+                    "settings": {
+                        "heading": "Why This New 'Grounding' Technology Is Taking The Health World By Storm",
+                        "heading_size": "h1"
+                    }
+                },
+                "subheadline": {
+                    "type": "text",
+                    "settings": {
+                        "text": "<p><b>By Dr. Mark Gabriel</b> | Physical Therapist</p>"
+                    }
+                }
+            },
+            "settings": {
+                "desktop_content_position": "left",
+                "content_alignment": "left",
+                "color_scheme": "background-1",
+                "full_width": false,
+                "padding_top": 40,
+                "padding_bottom": 40
+            }
+        },
+        "comparison_table": {
+            "type": "comparison-table",
+            "settings": {
+                "title": "Why TerraHeal Is Superior",
+                "heading_size": "h2",
+                "style": "classic"
+            }
+        },
+        "sticky_cta": {
+            "type": "sticky-footer-cta",
+            "settings": {
+                "button_text": "GET MY SPECIAL DEAL NOW!",
+                "button_link": "shopify://products/grounding-mat",
+                "bg_color": "#ffffff",
+                "btn_color": "#00c300",
+                "btn_text_color": "#ffffff"
+            }
+        }
+    },
+    "order": [
+        "lp_header",
+        "main_content",
+        "comparison_table",
+        "sticky_cta"
+    ]
+}

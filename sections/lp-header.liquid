@@ -1,0 +1,45 @@
+{% schema %}
+{
+  "name": "LP Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "advertorial_label",
+      "label": "Advertorial Label",
+      "default": "Advertorial"
+    },
+    {
+      "type": "text",
+      "id": "right_label",
+      "label": "Right Label",
+      "default": "Consumer Health Report"
+    },
+    {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color",
+        "default": "#000000"
+    },
+    {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "LP Header"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="lp-header" style="background-color: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }}; padding: 10px 20px; font-size: 14px; display: flex; justify-content: space-between; align-items: center;">
+  <div class="lp-header__left">
+    <span style="font-weight: bold; text-transform: uppercase;">{{ section.settings.advertorial_label }}</span>
+  </div>
+  <div class="lp-header__right">
+    <span>{{ 'now' | date: "%B %d, %Y" }} | {{ section.settings.right_label }}</span>
+  </div>
+</div>
