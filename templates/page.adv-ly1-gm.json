@@ -1,4 +1,5 @@
 {
+  "name": "Advertorial Landing Page",
   "sections": {
     "hero": {
       "type": "lp-advertorial-hero",
@@ -132,7 +133,11 @@
           }
         }
       },
-      "block_order": ["testimonial_1", "quote_1", "testimonial_2"]
+      "block_order": [
+        "testimonial_1",
+        "quote_1",
+        "testimonial_2"
+      ]
     },
     "dream_state": {
       "type": "lp-content-block",
