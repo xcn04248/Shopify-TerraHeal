@@ -51,7 +51,14 @@
   .lp-content-section--pain li::before {
     content: "✗";
     color: #dc3545;
+    font-weight: bold;
   }
+  /* Block specific overrides if needed */
+  .lp-block--text.pain-style li::before {
+    content: "✗";
+    color: #dc3545;
+  }
+  
   .lp-content-section__highlight {
     background: #e8f5e9;
     border-left: 4px solid #28a745;
@@ -63,11 +70,13 @@
     max-width: 100%;
     border-radius: 12px;
     margin: 30px 0;
+    display: block;
   }
   .lp-content-section__video {
     width: 100%;
     border-radius: 12px;
     margin: 30px 0;
+    display: block;
   }
   
   @media (max-width: 749px) {
@@ -79,6 +88,7 @@
 
 <section class="lp-content-section{% if section.settings.background == 'light' %} lp-content-section--bg-light{% endif %}{% if section.settings.list_style == 'pain' %} lp-content-section--pain{% endif %}">
   <div class="lp-content-section__inner">
+    {%- comment -%} Legacy Support: Render Section Settings Content {%- endcomment -%}
     {%- if section.settings.subheading != blank -%}
       <h3>{{ section.settings.subheading }}</h3>
     {%- endif -%}
@@ -116,26 +126,64 @@
     {%- endif -%}
     
     {%- if section.settings.video_url != blank -%}
-      <video 
-        class="lp-content-section__video"
-        autoplay 
-        muted 
-        loop 
-        playsinline
-      >
+      <video class="lp-content-section__video" autoplay muted loop playsinline>
         <source src="{{ section.settings.video_url }}" type="video/mp4">
       </video>
     {%- elsif section.settings.video_asset != blank -%}
-      <video 
-        class="lp-content-section__video"
-        autoplay 
-        muted 
-        loop 
-        playsinline
-      >
+      <video class="lp-content-section__video" autoplay muted loop playsinline>
         <source src="{{ section.settings.video_asset | asset_url }}" type="video/mp4">
       </video>
     {%- endif -%}
+
+    {%- comment -%} New Block Loop {%- endcomment -%}
+    {%- for block in section.blocks -%}
+      <div class="lp-block lp-block--{{ block.type }}{% if block.settings.list_style == 'pain' %} pain-style{% endif %}" {{ block.shopify_attributes }}>
+        
+        {%- case block.type -%}
+          {%- when 'text' -%}
+            {%- if block.settings.subheading != blank -%}
+              <h3>{{ block.settings.subheading }}</h3>
+            {%- endif -%}
+            {%- if block.settings.heading != blank -%}
+              <h2>{{ block.settings.heading }}</h2>
+            {%- endif -%}
+            {%- if block.settings.content != blank -%}
+              <div class="lp-content-section__body">
+                {{ block.settings.content }}
+              </div>
+            {%- endif -%}
+            {%- if block.settings.highlight_text != blank -%}
+              <div class="lp-content-section__highlight">
+                {{ block.settings.highlight_text }}
+              </div>
+            {%- endif -%}
+
+          {%- when 'image' -%}
+            {%- if block.settings.heading != blank -%}
+              <h2>{{ block.settings.heading }}</h2>
+            {%- endif -%}
+            {%- if block.settings.image != blank -%}
+              <img src="{{ block.settings.image | image_url: width: 1200 }}" alt="{{ block.settings.alt }}" class="lp-content-section__image" loading="lazy">
+            {%- elsif block.settings.asset_image != blank -%}
+              <img src="{{ block.settings.asset_image | asset_url }}" alt="{{ block.settings.alt }}" class="lp-content-section__image" loading="lazy">
+            {%- endif -%}
+
+          {%- when 'video' -%}
+            {%- if block.settings.heading != blank -%}
+              <h2>{{ block.settings.heading }}</h2>
+            {%- endif -%}
+            {%- if block.settings.video_url != blank -%}
+              <video class="lp-content-section__video" autoplay muted loop playsinline>
+                <source src="{{ block.settings.video_url }}" type="video/mp4">
+              </video>
+            {%- elsif block.settings.video_asset != blank -%}
+              <video class="lp-content-section__video" autoplay muted loop playsinline>
+                <source src="{{ block.settings.video_asset | asset_url }}" type="video/mp4">
+              </video>
+            {%- endif -%}
+        {%- endcase -%}
+      </div>
+    {%- endfor -%}
   </div>
 </section>
 
@@ -155,61 +203,62 @@
       "default": "white"
     },
     {
+      "type": "header",
+      "content": "Legacy Section Settings (Deprecated - Use Blocks)"
+    },
+    {
       "type": "select",
       "id": "list_style",
-      "label": "List Style",
-      "options": [
-        {"value": "benefit", "label": "Benefits (✓)"},
-        {"value": "pain", "label": "Pain Points (✗)"}
-      ],
+      "label": "List Style (Legacy)",
+      "options": [{"value": "benefit", "label": "Benefits (✓)"}, {"value": "pain", "label": "Pain Points (✗)"}],
       "default": "benefit"
     },
+    { "type": "text", "id": "subheading", "label": "Subheading" },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading" },
+    { "type": "richtext", "id": "content", "label": "Content" },
+    { "type": "textarea", "id": "highlight_text", "label": "Highlight Box Text" },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "image_alt", "label": "Image Alt Text" },
+    { "type": "text", "id": "asset_image", "label": "Asset Image Filename" },
+    { "type": "url", "id": "video_url", "label": "Video URL" },
+    { "type": "text", "id": "video_asset", "label": "Video Asset Filename" }
+  ],
+  "blocks": [
     {
       "type": "text",
-      "id": "subheading",
-      "label": "Subheading"
+      "name": "Text Content",
+      "settings": [
+        { "type": "text", "id": "subheading", "label": "Subheading" },
+        { "type": "inline_richtext", "id": "heading", "label": "Heading" },
+        { "type": "richtext", "id": "content", "label": "Content" },
+        { "type": "textarea", "id": "highlight_text", "label": "Highlight Box Text" },
+        {
+          "type": "select",
+          "id": "list_style",
+          "label": "List Style",
+          "options": [{"value": "benefit", "label": "Benefits"}, {"value": "pain", "label": "Pain Points"}],
+          "default": "benefit"
+        }
+      ]
     },
     {
-      "type": "inline_richtext",
-      "id": "heading",
-      "label": "Heading"
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        { "type": "inline_richtext", "id": "heading", "label": "Heading (Optional)" },
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "asset_image", "label": "Asset Image Filename" },
+        { "type": "text", "id": "alt", "label": "Alt Text" }
+      ]
     },
     {
-      "type": "richtext",
-      "id": "content",
-      "label": "Content"
-    },
-    {
-      "type": "textarea",
-      "id": "highlight_text",
-      "label": "Highlight Box Text"
-    },
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Image"
-    },
-    {
-      "type": "text",
-      "id": "image_alt",
-      "label": "Image Alt Text"
-    },
-    {
-      "type": "text",
-      "id": "asset_image",
-      "label": "Asset Image Filename",
-      "info": "Enter the filename of an asset (e.g., lp-product-01-terra-grounding-mat.png)"
-    },
-    {
-      "type": "url",
-      "id": "video_url",
-      "label": "Video URL"
-    },
-    {
-      "type": "text",
-      "id": "video_asset",
-      "label": "Video Asset Filename",
-      "info": "Enter the video filename (e.g., lp-videos-01-product-in-use.mp4)"
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        { "type": "inline_richtext", "id": "heading", "label": "Heading (Optional)" },
+        { "type": "url", "id": "video_url", "label": "Video URL" },
+        { "type": "text", "id": "video_asset", "label": "Video Asset Filename" }
+      ]
     }
   ],
   "presets": [

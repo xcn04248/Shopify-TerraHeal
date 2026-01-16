@@ -1,5 +1,5 @@
 {
-  "name": "Advertorial Landing Page V3",
+  "name": "Advertorial Landing Page V4",
   "sections": {
     "hero": {
       "type": "lp-advertorial-hero",
@@ -13,178 +13,320 @@
         "author_title": "Physical Therapist"
       }
     },
-    "intro": {
+    "content_1_white": {
       "type": "lp-content-block",
       "settings": {
-        "background": "white",
-        "list_style": "pain",
-        "content": "<p>Hi, I'm Dr. Mark Gabriel, and as a lymphedema specialist with over 11 years of clinical experience, I've helped thousands of patients struggling with this debilitating condition. But what most of my patients never knew was that I too suffered silently with lymphedema for years.</p><p>If you're reading this, you know exactly what I mean...</p><ul><li>Chronic leg swelling</li><li>Persistent fluid buildup</li><li>Nerve-related pain and discomfort</li><li>Persistent heel pain</li></ul><p>Whatever the issue, I've seen them all. For many of my patients, lymphedema was more than just physical suffering – it stripped them of their dignity, independence, and joy in life.</p><p>Some patients were so bad that they had body parts affected where...</p>"
-      }
+        "background": "white"
+      },
+      "blocks": {
+        "intro": {
+          "type": "text",
+          "settings": {
+            "list_style": "pain",
+            "content": "<p>Hi, I'm Dr. Mark Gabriel, and as a lymphedema specialist with over 11 years of clinical experience, I've helped thousands of patients struggling with this debilitating condition. But what most of my patients never knew was that I too suffered silently with lymphedema for years.</p><p>If you're reading this, you know exactly what I mean...</p><ul><li>Chronic leg swelling</li><li>Persistent fluid buildup</li><li>Nerve-related pain and discomfort</li><li>Persistent heel pain</li></ul><p>Whatever the issue, I've seen them all. For many of my patients, lymphedema was more than just physical suffering – it stripped them of their dignity, independence, and joy in life.</p><p>Some patients were so bad that they had body parts affected where...</p>"
+          }
+        },
+        "limb_progression_text": {
+          "type": "text",
+          "settings": {
+            "heading": "You Couldn't Tell What Limb You We're Looking At",
+            "content": "<p>I witnessed their daily struggles as they tried countless treatments, only to find temporary relief at best.</p>"
+          }
+        },
+        "limb_progression_img": {
+          "type": "image",
+          "settings": {
+            "asset_image": "lp-limb-progression.png"
+          }
+        }
+      },
+      "block_order": [
+        "intro",
+        "limb_progression_text",
+        "limb_progression_img"
+      ]
     },
-    "limb_progression": {
+    "content_2_light": {
       "type": "lp-content-block",
       "settings": {
-        "background": "white",
-        "heading": "You Couldn't Tell What Limb You We're Looking At",
-        "asset_image": "lp-limb-progression.png",
-        "content": "<p>I witnessed their daily struggles as they tried countless treatments, only to find temporary relief at best.</p>"
-      }
+        "background": "light"
+      },
+      "blocks": {
+        "discovery": {
+          "type": "text",
+          "settings": {
+            "subheading": "But everything changed when I made a fascinating discovery...",
+            "heading": "What I Found Completely Surprised Me",
+            "content": "<p>Documented studies showed that lymphedema was extremely rare in previous generations. This wasn't just coincidence - it was a crucial insight into how our modern lifestyle has disrupted our body's natural healing processes.</p><p>This observation led me to identify what I now call <strong>\"Nocturnal Lymphatic Disconnection Syndrome\"</strong> - a silent condition affecting more and more people in our modern times.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "discovery"
+      ]
     },
-    "discovery": {
+    "content_3_white": {
       "type": "lp-content-block",
       "settings": {
-        "background": "light",
-        "subheading": "But everything changed when I made a fascinating discovery...",
-        "heading": "What I Found Completely Surprised Me",
-        "content": "<p>Documented studies showed that lymphedema was extremely rare in previous generations. This wasn't just coincidence - it was a crucial insight into how our modern lifestyle has disrupted our body's natural healing processes.</p><p>This observation led me to identify what I now call <strong>\"Nocturnal Lymphatic Disconnection Syndrome\"</strong> - a silent condition affecting more and more people in our modern times.</p>"
-      }
+        "background": "white"
+      },
+      "blocks": {
+        "education_diagram_text": {
+          "type": "text",
+          "settings": {
+            "subheading": "So Let me explain this in a way that will make perfect sense..."
+          }
+        },
+        "education_diagram_img": {
+          "type": "image",
+          "settings": {
+            "asset_image": "lp-lymphatic-diagram.png"
+          }
+        },
+        "education_system": {
+          "type": "text",
+          "settings": {
+            "content": "<p>Most people only know about blood circulation.</p><p>How good flow of blood is important for maintaining your health...</p><p>But did you know that there's another system that is actually just as important to getting rid of waste and toxins in your body? That's called the <strong>Lymphatic System</strong>.</p><p>Your lymphatic system is like a sophisticated electrical pump network that removes excess fluid from your body. It's mainly responsible for fighting infection throughout your internal system, and regulating body fluid levels.</p>"
+          }
+        },
+        "education_swelling_video": {
+          "type": "video",
+          "settings": {
+            "heading": "So How Does This Link Back To Swelling?",
+            "video_asset": "lp-swelling-video_verified.mp4"
+          }
+        },
+        "education_swelling_text": {
+          "type": "text",
+          "settings": {
+            "content": "<p>Well earlier, we said that a healthy system involves biological drainage of the fluid.</p><p>So swelling could simply be seen as a build up of this fluid. That fluid that normally travels through the lymph vessels and nodes becomes trapped.</p><p>Now as a result of this lack of movement, you're getting more and more fluid build up that is causing pain and discomfort.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "education_diagram_text",
+        "education_diagram_img",
+        "education_system",
+        "education_swelling_video",
+        "education_swelling_text"
+      ]
     },
-    "education_diagram": {
+    "content_4_light": {
       "type": "lp-content-block",
       "settings": {
-        "background": "white",
-        "subheading": "So Let me explain this in a way that will make perfect sense...",
-        "asset_image": "lp-lymphatic-diagram.png"
-      }
+        "background": "light"
+      },
+      "blocks": {
+        "analogy_img": {
+          "type": "image",
+          "settings": {
+            "heading": "A good example of this is being stuck on a highway...",
+            "asset_image": "lp-highway-analogy.png"
+          }
+        },
+        "analogy_text": {
+          "type": "text",
+          "settings": {
+            "content": "<p>The highway only operates when every car is travelling in the same direction without any disruption. No traffic lights, or signs telling you to stop.</p><p>But let's add a car accident to stop the flow. The accident creates stoppage, and suddenly you're trapped in this jam with a very small amount of cars able to slip through.</p><p>This disrupted flow of vehicles, is naturally going to cause a build up...</p><p><strong>Starting to make sense now?</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "analogy_img",
+        "analogy_text"
+      ]
     },
-    "education_system": {
+    "content_5_white": {
       "type": "lp-content-block",
       "settings": {
-        "background": "white",
-        "content": "<p>Most people only know about blood circulation.</p><p>How good flow of blood is important for maintaining your health...</p><p>But did you know that there's another system that is actually just as important to getting rid of waste and toxins in your body? That's called the <strong>Lymphatic System</strong>.</p><p>Your lymphatic system is like a sophisticated electrical pump network that removes excess fluid from your body. It's mainly responsible for fighting infection throughout your internal system, and regulating body fluid levels.</p>"
-      }
+        "background": "white"
+      },
+      "blocks": {
+        "stage4_warning_text": {
+          "type": "text",
+          "settings": {
+            "heading": "Without Frequent Stimulation, Your Legs & Feet Will Eventually Lead to Stage 4 Lymphoedema...",
+            "content": "<p>At Stage 4, the fluid and toxins that are normally cleared from your internal system, begin to build up...</p><p>Like a clogged pipe, the fluid has nowhere else to go. So it stays stagnant, causing your legs to swell up like a balloon.</p><p>You're feeling heavy and it's becoming difficult to move. Almost like gorilla glue sticking your feet to the floor...</p><p>When your skin has to stretch to hold the excess fluid, the pain tends to get worse.</p>"
+          }
+        },
+        "stage4_warning_img": {
+          "type": "image",
+          "settings": {
+            "asset_image": "lp-edema-example-2.png"
+          }
+        }
+      },
+      "block_order": [
+        "stage4_warning_text",
+        "stage4_warning_img"
+      ]
     },
-    "education_swelling_header": {
+    "content_6_light": {
       "type": "lp-content-block",
       "settings": {
-        "background": "white",
-        "heading": "So How Does This Link Back To Swelling?",
-        "video_asset": "lp-swelling-video_verified.mp4"
-      }
+        "background": "light"
+      },
+      "blocks": {
+        "solution_intro": {
+          "type": "text",
+          "settings": {
+            "subheading": "So... How Can We Address This?",
+            "content": "<p>It's probably not so much a secret...</p><p>But when you're in this much pain, you tend to overlook the simplest solutions.</p><p>The key is going to be in your calves.</p>"
+          }
+        },
+        "movement_missing_video": {
+          "type": "video",
+          "settings": {
+            "heading": "The Movement You're Missing, Is Essential to Supporting Lymphatic Drainage!",
+            "video_asset": "lp-grounding-energy-video.mp4"
+          }
+        },
+        "solution_details_text": {
+          "type": "text",
+          "settings": {
+            "content": "<p>So why movement?</p><p>When you take a step, you're causing the muscles in your calves to tighten.</p><p>This compression will create natural stimulus to force the fluid that's been built up in your legs over time upwards.</p><p>But if you're already reaching stage 4 and your lower limbs have swollen like balloons - we're not expecting you to get off your couch and walk 5km each day. We already know that's practically impossible when your legs feel like exploding at the slightest touch...</p><p>So what other options are available??</p><p>Keep reading.</p>"
+          }
+        },
+        "solution_details_video": {
+          "type": "video",
+          "settings": {
+            "video_asset": "lp-cellular-signal-video.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "solution_intro",
+        "movement_missing_video",
+        "solution_details_text",
+        "solution_details_video"
+      ]
     },
-    "education_swelling_text": {
+    "content_7_white": {
       "type": "lp-content-block",
       "settings": {
-        "background": "white",
-        "content": "<p>Well earlier, we said that a healthy system involves biological drainage of the fluid.</p><p>So swelling could simply be seen as a build up of this fluid. That fluid that normally travels through the lymph vessels and nodes becomes trapped.</p><p>Now as a result of this lack of movement, you're getting more and more fluid build up that is causing pain and discomfort.</p>"
-      }
+        "background": "white"
+      },
+      "blocks": {
+        "grounding_explanation": {
+          "type": "text",
+          "settings": {
+            "heading": "This sounds like a hack, but it's all possible thanks to the natural remedy known as Grounding.",
+            "content": "<p><strong>Grounding</strong> is a naturally known phenomenon that occurs when direct contact between your body and the Earth's surface occurs.</p><p>This causes electrons to be transferred directly into your body, creating natural electrical impulses that stimulate you from the ground up.</p><p>Yes that means, that your calf muscles receive a natural stimuli to contract and relax repeatedly - better known as the <strong>pumping effect</strong>.</p>",
+            "highlight_text": "This pumping of your calf muscles naturally improves blood flow, and stimulates lymphatic drainage, reducing swelling and giving you well-deserved pain relief in your lower limbs."
+          }
+        }
+      },
+      "block_order": [
+        "grounding_explanation"
+      ]
     },
-    "analogy_image": {
+    "content_8_light": {
       "type": "lp-content-block",
       "settings": {
-        "background": "light",
-        "heading": "A good example of this is being stuck on a highway...",
-        "asset_image": "lp-highway-analogy.png"
-      }
+        "background": "light"
+      },
+      "blocks": {
+        "product_intro_text": {
+          "type": "text",
+          "settings": {
+            "subheading": "Find Lymphedema Relief in the Comfort of Your Home (Without Any Effort)"
+          }
+        },
+        "product_intro_video": {
+          "type": "video",
+          "settings": {
+            "video_asset": "lp-professional-use-video.mp4"
+          }
+        },
+        "product_intro_content": {
+          "type": "text",
+          "settings": {
+            "content": "<p>So how can you do this from the comfort of your home?</p><p>By using a special mat made of conductive material that is plugged into the grounding outlet of your electrical socket, that allows the transfer of electrons from the Earth.</p><p>Normally this is used to balance the charge of electrical devices and appliances, so there isn't any live electricity flowing through.</p><p>We're simply borrowing the power of the Earth, to give you a pain free natural remedy that can essentially relieve your swollen feet and calves.</p><p>Some people experience a tingliness... Others may not experience anything physically, but <strong>no one can ignore the surprising results</strong>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "product_intro_text",
+        "product_intro_video",
+        "product_intro_content"
+      ]
     },
-    "analogy_text": {
+    "content_9_white": {
       "type": "lp-content-block",
       "settings": {
-        "background": "light",
-        "content": "<p>The highway only operates when every car is travelling in the same direction without any disruption. No traffic lights, or signs telling you to stop.</p><p>But let's add a car accident to stop the flow. The accident creates stoppage, and suddenly you're trapped in this jam with a very small amount of cars able to slip through.</p><p>This disrupted flow of vehicles, is naturally going to cause a build up...</p><p><strong>Starting to make sense now?</strong></p>"
-      }
+        "background": "white"
+      },
+      "blocks": {
+        "doctor_trust_text": {
+          "type": "text",
+          "settings": {
+            "heading": "So Why Aren't Doctors Pushing This??",
+            "content": "<p>Imagine walking into a clinic, talking about your swollen legs and intense pain... Only to have your clinician give you a one time remedy that will stop you from coming back to them.</p><p>Think about it... They would rather prescribe you medication, to keep you coming back.</p><p>But I'm not being paid by them. I'd rather give the opportunity to deliver the truth to those who need it.</p><p>That's why I collaborated with an American startup known as <strong>The Grounding Co</strong>. They aren't known widely, and if anything are maybe being gatekept. But from working with them closely, <strong>we've been able to help over 100,000 people throughout America</strong>.</p>"
+          }
+        },
+        "doctor_trust_img": {
+          "type": "image",
+          "settings": {
+            "asset_image": "lp-educational-02-spine-recovery-model.png"
+          }
+        }
+      },
+      "block_order": [
+        "doctor_trust_text",
+        "doctor_trust_img"
+      ]
     },
-    "stage4_warning": {
+    "content_10_light": {
       "type": "lp-content-block",
       "settings": {
-        "background": "white",
-        "heading": "Without Frequent Stimulation, Your Legs & Feet Will Eventually Lead to Stage 4 Lymphoedema...",
-        "content": "<p>At Stage 4, the fluid and toxins that are normally cleared from your internal system, begin to build up...</p><p>Like a clogged pipe, the fluid has nowhere else to go. So it stays stagnant, causing your legs to swell up like a balloon.</p><p>You're feeling heavy and it's becoming difficult to move. Almost like gorilla glue sticking your feet to the floor...</p><p>When your skin has to stretch to hold the excess fluid, the pain tends to get worse.</p>",
-        "asset_image": "lp-edema-example-2.png"
-      }
-    },
-    "solution_intro": {
-      "type": "lp-content-block",
-      "settings": {
-        "background": "light",
-        "subheading": "So... How Can We Address This?",
-        "content": "<p>It's probably not so much a secret...</p><p>But when you're in this much pain, you tend to overlook the simplest solutions.</p><p>The key is going to be in your calves.</p>"
-      }
-    },
-    "movement_missing": {
-      "type": "lp-content-block",
-      "settings": {
-        "background": "light",
-        "heading": "The Movement You're Missing, Is Essential to Supporting Lymphatic Drainage!",
-        "video_asset": "lp-grounding-energy-video.mp4"
-      }
-    },
-    "solution_details": {
-      "type": "lp-content-block",
-      "settings": {
-        "background": "light",
-        "content": "<p>So why movement?</p><p>When you take a step, you're causing the muscles in your calves to tighten.</p><p>This compression will create natural stimulus to force the fluid that's been built up in your legs over time upwards.</p><p>But if you're already reaching stage 4 and your lower limbs have swollen like balloons - we're not expecting you to get off your couch and walk 5km each day. We already know that's practically impossible when your legs feel like exploding at the slightest touch...</p><p>So what other options are available??</p><p>Keep reading.</p>",
-        "video_asset": "lp-cellular-signal-video.mp4"
-      }
-    },
-    "grounding_explanation": {
-      "type": "lp-content-block",
-      "settings": {
-        "background": "white",
-        "heading": "This sounds like a hack, but it's all possible thanks to the natural remedy known as Grounding.",
-        "content": "<p><strong>Grounding</strong> is a naturally known phenomenon that occurs when direct contact between your body and the Earth's surface occurs.</p><p>This causes electrons to be transferred directly into your body, creating natural electrical impulses that stimulate you from the ground up.</p><p>Yes that means, that your calf muscles receive a natural stimuli to contract and relax repeatedly - better known as the <strong>pumping effect</strong>.</p>",
-        "highlight_text": "This pumping of your calf muscles naturally improves blood flow, and stimulates lymphatic drainage, reducing swelling and giving you well-deserved pain relief in your lower limbs."
-      }
-    },
-    "product_intro_header": {
-      "type": "lp-content-block",
-      "settings": {
-        "background": "light",
-        "subheading": "Find Lymphedema Relief in the Comfort of Your Home (Without Any Effort)",
-        "video_asset": "lp-professional-use-video.mp4"
-      }
-    },
-    "product_intro_content": {
-      "type": "lp-content-block",
-      "settings": {
-        "background": "light",
-        "content": "<p>So how can you do this from the comfort of your home?</p><p>By using a special mat made of conductive material that is plugged into the grounding outlet of your electrical socket, that allows the transfer of electrons from the Earth.</p><p>Normally this is used to balance the charge of electrical devices and appliances, so there isn't any live electricity flowing through.</p><p>We're simply borrowing the power of the Earth, to give you a pain free natural remedy that can essentially relieve your swollen feet and calves.</p><p>Some people experience a tingliness... Others may not experience anything physically, but <strong>no one can ignore the surprising results</strong>.</p>"
-      }
-    },
-    "doctor_trust": {
-      "type": "lp-content-block",
-      "settings": {
-        "background": "white",
-        "heading": "So Why Aren't Doctors Pushing This??",
-        "asset_image": "lp-educational-02-spine-recovery-model.png",
-        "content": "<p>Imagine walking into a clinic, talking about your swollen legs and intense pain... Only to have your clinician give you a one time remedy that will stop you from coming back to them.</p><p>Think about it... They would rather prescribe you medication, to keep you coming back.</p><p>But I'm not being paid by them. I'd rather give the opportunity to deliver the truth to those who need it.</p><p>That's why I collaborated with an American startup known as <strong>The Grounding Co</strong>. They aren't known widely, and if anything are maybe being gatekept. But from working with them closely, <strong>we've been able to help over 100,000 people throughout America</strong>.</p>"
-      }
-    },
-    "use_cases_list": {
-      "type": "lp-content-block",
-      "settings": {
-        "background": "light",
-        "content": "<p>This affordable device can be used to activate your lymphatic system while you're in the comfort of your own home...</p><p>While you're on the couch watching TV...</p><p>Even while you're maybe working on your laptop!</p>"
-      }
-    },
-    "use_cases_video": {
-      "type": "lp-content-block",
-      "settings": {
-        "background": "light",
-        "video_asset": "lp-lifestyle-video_verified.mp4"
-      }
-    },
-    "safety_intro": {
-      "type": "lp-content-block",
-      "settings": {
-        "background": "light",
-        "content": "<p>The Grounding Co have engineered a device that takes advantage of the Earth's natural energy to give you the relief you deserve.</p><p>You're probably asking yourself, whether it's dangerous though because of the special cable required...</p><p><strong>That's a good question!</strong></p>"
-      }
-    },
-    "safety_image": {
-      "type": "lp-content-block",
-      "settings": {
-        "background": "light",
-        "asset_image": "lp-safety-cable.png"
-      }
-    },
-    "safety_details": {
-      "type": "lp-content-block",
-      "settings": {
-        "background": "light",
-        "content": "<p>The cable isn't moving live electricity into the mat, but rather creating a pathway for the flow of natural electrons from the Earth.</p><p>Within minutes of placing your feet onto the Grounding Mat, you will notice this sense of relaxation.</p><p>Better yet, the electron balance into your body also will stimulate your muscles to produce muscle contractions.</p><p>Similar to feeling your heart beat, the process of contraction happening silently in your calves is amazing proof of the mat working.</p><p>These clinical studies highlighting focus on Lymphedema have all cited the effectiveness of grounding and we've seen it firsthand.</p>",
-        "asset_image": "lp-thermography-heatmap.png"
-      }
+        "background": "light"
+      },
+      "blocks": {
+        "use_cases_list": {
+          "type": "text",
+          "settings": {
+            "content": "<p>This affordable device can be used to activate your lymphatic system while you're in the comfort of your own home...</p><p>While you're on the couch watching TV...</p><p>Even while you're maybe working on your laptop!</p>"
+          }
+        },
+        "use_cases_video": {
+          "type": "video",
+          "settings": {
+            "video_asset": "lp-lifestyle-video_verified.mp4"
+          }
+        },
+        "safety_intro": {
+          "type": "text",
+          "settings": {
+            "content": "<p>The Grounding Co have engineered a device that takes advantage of the Earth's natural energy to give you the relief you deserve.</p><p>You're probably asking yourself, whether it's dangerous though because of the special cable required...</p><p><strong>That's a good question!</strong></p>"
+          }
+        },
+        "safety_image": {
+          "type": "image",
+          "settings": {
+            "asset_image": "lp-safety-cable.png"
+          }
+        },
+        "safety_details_text": {
+          "type": "text",
+          "settings": {
+            "content": "<p>The cable isn't moving live electricity into the mat, but rather creating a pathway for the flow of natural electrons from the Earth.</p><p>Within minutes of placing your feet onto the Grounding Mat, you will notice this sense of relaxation.</p><p>Better yet, the electron balance into your body also will stimulate your muscles to produce muscle contractions.</p><p>Similar to feeling your heart beat, the process of contraction happening silently in your calves is amazing proof of the mat working.</p><p>These clinical studies highlighting focus on Lymphedema have all cited the effectiveness of grounding and we've seen it firsthand.</p>"
+          }
+        },
+        "safety_details_img": {
+          "type": "image",
+          "settings": {
+            "asset_image": "lp-thermography-heatmap.png"
+          }
+        }
+      },
+      "block_order": [
+        "use_cases_list",
+        "use_cases_video",
+        "safety_intro",
+        "safety_image",
+        "safety_details_text",
+        "safety_details_img"
+      ]
     },
     "testimonials": {
       "type": "lp-testimonials",
@@ -225,14 +367,24 @@
         "testimonial_2"
       ]
     },
-    "dream_state": {
+    "content_11_white": {
       "type": "lp-content-block",
       "settings": {
-        "background": "white",
-        "list_style": "benefit",
-        "heading": "Just imagine...",
-        "content": "<ul><li>Having the opportunity to find shoes that actually fit?</li><li>Being able to go outside without the embarrassment of tree trunk calves?</li><li>No more jolting pain at every single step?</li></ul><p><strong>All could be a reality if you're willing to give our Grounding Mats a try.</strong></p><ul><li>No more hassle of finding comfortable shoes</li><li>No more embarrassment of puffed up legs and feet</li><li>No more pain that makes you feel imprisoned in your own body</li></ul>"
-      }
+        "background": "white"
+      },
+      "blocks": {
+        "dream_state": {
+          "type": "text",
+          "settings": {
+            "list_style": "benefit",
+            "heading": "Just imagine...",
+            "content": "<ul><li>Having the opportunity to find shoes that actually fit?</li><li>Being able to go outside without the embarrassment of tree trunk calves?</li><li>No more jolting pain at every single step?</li></ul><p><strong>All could be a reality if you're willing to give our Grounding Mats a try.</strong></p><ul><li>No more hassle of finding comfortable shoes</li><li>No more embarrassment of puffed up legs and feet</li><li>No more pain that makes you feel imprisoned in your own body</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "dream_state"
+      ]
     },
     "pricing": {
       "type": "lp-pricing-cta",
@@ -247,12 +399,22 @@
         "guarantee_text": "If you've given at least 30 days and you're dissatisfied with the health benefits in any way, just let the team know at The Grounding Co and get a full refund. No questions asked."
       }
     },
-    "disclaimer": {
+    "content_12_light": {
       "type": "lp-content-block",
       "settings": {
-        "background": "light",
-        "content": "<p><strong>MEDICAL & HEALTH DISCLAIMER:</strong> All information and results presented on this site are for informational purposes only and are not intended to diagnose, treat, cure, or prevent any disease. Results may vary from person to person. If you have a medical concern, consult with your health care provider. Never disregard professional medical advice because of something you have read here.</p>"
-      }
+        "background": "light"
+      },
+      "blocks": {
+        "disclaimer": {
+          "type": "text",
+          "settings": {
+            "content": "<p><strong>MEDICAL & HEALTH DISCLAIMER:</strong> All information and results presented on this site are for informational purposes only and are not intended to diagnose, treat, cure, or prevent any disease. Results may vary from person to person. If you have a medical concern, consult with your health care provider. Never disregard professional medical advice because of something you have read here.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "disclaimer"
+      ]
     },
     "sticky_cta": {
       "type": "lp-sticky-footer-cta",
@@ -264,32 +426,20 @@
   },
   "order": [
     "hero",
-    "intro",
-    "limb_progression",
-    "discovery",
-    "education_diagram",
-    "education_system",
-    "education_swelling_header",
-    "education_swelling_text",
-    "analogy_image",
-    "analogy_text",
-    "stage4_warning",
-    "solution_intro",
-    "movement_missing",
-    "solution_details",
-    "grounding_explanation",
-    "product_intro_header",
-    "product_intro_content",
-    "doctor_trust",
-    "use_cases_list",
-    "use_cases_video",
-    "safety_intro",
-    "safety_image",
-    "safety_details",
+    "content_1_white",
+    "content_2_light",
+    "content_3_white",
+    "content_4_light",
+    "content_5_white",
+    "content_6_light",
+    "content_7_white",
+    "content_8_light",
+    "content_9_white",
+    "content_10_light",
+    "content_11_white",
     "testimonials",
-    "dream_state",
     "pricing",
-    "disclaimer",
+    "content_12_light",
     "sticky_cta"
   ]
 }
