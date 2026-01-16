@@ -1,49 +1,49 @@
-# Strict Content Verification Workflow
+# 严格内容验证工作流 (Strict Content Verification Workflow)
 
-This document outlines the "Element-Level Audit" process used to ensure the Shopify Advertorial Landing Page (`page.adv-ly1-gm`) matches the reference site (`https://thegrounding.co/pages/adv-ly1-gm`) with high fidelity.
+本文档概述了用于确保 Shopify 广告着陆页 (`page.adv-ly1-gm`) 与参考站点 (`https://thegrounding.co/pages/adv-ly1-gm`) 保持高度一致的“元素级审计”流程。
 
-## Philosophy: "Source-Truth" Verification
-Instead of comparing code against "extracted notes," we compare code against the **live reference page** element-by-element.
+## 核心理念：“源头真值”验证
+我们不将代码与“提取的笔记”进行对比，而是将代码直接与**实时在线的参考页面**进行逐个元素的对比。
 
-## Step 1: Automated Reference Extraction (The "Truth")
-We use browser automation scripts to crawl the reference URL and generate a linear "Content Map".
-**Target Scope:** Main Article Column (ignoring sticky sidebars/footers).
+## 第1步：自动化参考源提取（确立“真值”）
+我们使用浏览器自动化脚本爬取参考 URL，并生成线性的“内容映射表”。
+**目标范围：** 主文章栏（忽略侧边栏/页脚等无关区域）。
 
-**Extraction Components:**
-*   **Headings (H1-H6):** Capture exact text.
-*   **Paragraphs (P):** Capture text content (first 50 chars for matching).
-*   **Images (IMG):** Capture Source URL and Alt Text.
-*   **Lists (UL/OL):** Capture list items.
+**提取组件：**
+*   **标题 (H1-H6)：** 抓取确切的文本内容。
+*   **段落 (P)：** 抓取文本内容（取前50个字符用于匹配）。
+*   **图片 (IMG)：** 抓取源 URL 和 Alt 文本。
+*   **列表 (UL/OL)：** 抓取列表项内容。
 
-**Output Format:**
+**输出格式示例：**
 ```text
-[Index 1] TYPE: H1 | CONTENT: "Leading Physical Therapist Discovers..."
-[Index 2] TYPE: P  | CONTENT: "WARNING: If lymphedema has left you..."
-[Index 3] TYPE: IMG| SRC: ".../image-uuid.jpg"
+[索引 1] 类型: H1  | 内容: "Leading Physical Therapist Discovers..."
+[索引 2] 类型: P   | 内容: "WARNING: If lymphedema has left you..."
+[索引 3] 类型: IMG | 来源: ".../image-uuid.jpg"
 ...
 ```
 
-## Step 2: Local Implementation Mapping
-We parse the local Shopify JSON template (`templates/page.adv-ly1-gm.json`) to build a parallel list.
-*   **Sections:** Iterate through `order` array.
-*   **Blocks:** Inside each section, read `settings.heading`, `settings.content`, and `settings.asset_image`.
+## 第2步：本地实现映射
+我们解析本地的 Shopify JSON 模板 (`templates/page.adv-ly1-gm.json`) 以构建一个平行的列表。
+*   **Sections（章节）：** 遍历 `order` 数组。
+*   **Blocks（区块）：** 在每个章节内部，读取 `settings.heading`（标题）、`settings.content`（内容）和 `settings.asset_image`（图片资源）。
 
-## Step 3: The "Diff" Process
-We compare the two lists content-block by content-block.
+## 第3步：“差异比对” (Diff) 过程
+我们将两个列表进行逐个内容块的比对。
 
-| Check | Criteria | Action on Mismatch |
+| 检查项 | 标准 | 不匹配时的行动 |
 | :--- | :--- | :--- |
-| **Existence** | Does the element exist in the JSON at the expected relative position? | **Add new block** (update JSON) |
-| **Type Match** | Is a Heading implemented as a Heading (not P)? | **Fix Schema/Liquid** |
-| **Asset Match** | Does the image visual match the reference? | **Download & Link Asset** |
-| **Sequence** | Is the flow logical (Timeline -> Science -> Solution)? | **Reorder Sections** |
+| **存在性** | 该元素是否在 JSON 的预期相对位置存在？ | **添加新区块** (更新 JSON) |
+| **类型匹配** | 标题是否被实现为标题（而不是段落）？ | **修复 Schema/Liquid 代码** |
+| **资源匹配** | 图片视觉是否与参考一致？ | **下载并链接正确资源** |
+| **顺序** | 逻辑流是否通顺（时间线 -> 科学原理 -> 解决方案）？ | **重新排序章节** |
 
-## Step 4: Remediation Loop
-1.  **Identify Gap**: (e.g., "Missing text paragraph after Limb Progression image").
-2.  **Locate Asset**: (if image missing) or Copy Text (if text missing).
-3.  **Update JSON**: Modify `page.adv-ly1-gm.json`.
-4.  **Push to GitHub**: Commit changes.
-5.  **Re-run Comparison**: Verify the fix.
+## 第4步：修复闭环
+1.  **识别缺口**：例如，“在肢体演变图片后缺失了一段文字”。
+2.  **定位资源**：(如果缺图片) 下载资源 或 (如果缺文字) 复制文本。
+3.  **更新 JSON**：修改 `page.adv-ly1-gm.json` 配置文件。
+4.  **推送到 GitHub**：提交更改。
+5.  **重新运行比对**：验证修复结果。
 
-## Success Metric
-The verification is considered complete ONLY when the "Diff" between the Reference Map and Local Map returns **zero** structural or content discrepancies.
+## 成功指标
+只有当参考源映射表与本地映射表之间的“Diff（差异）”为**零**结构性或内容性差异时，验证才算完成。
