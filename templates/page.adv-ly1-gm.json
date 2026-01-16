@@ -165,7 +165,7 @@
       "type": "lp-content-block",
       "settings": {
         "background": "light",
-        "content": "<p style=\"font-size: 12px; color: #666; text-align: center;\"><strong>MEDICAL & HEALTH DISCLAIMER:</strong> All information and results presented on this site are for informational purposes only and are not intended to diagnose, treat, cure, or prevent any disease. Results may vary from person to person. If you have a medical concern, consult with your health care provider. Never disregard professional medical advice because of something you have read here.</p>"
+        "content": "<p><strong>MEDICAL & HEALTH DISCLAIMER:</strong> All information and results presented on this site are for informational purposes only and are not intended to diagnose, treat, cure, or prevent any disease. Results may vary from person to person. If you have a medical concern, consult with your health care provider. Never disregard professional medical advice because of something you have read here.</p>"
       }
     },
     "sticky_cta": {
