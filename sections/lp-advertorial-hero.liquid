@@ -11,7 +11,16 @@
     letter-spacing: 1px;
   }
   .lp-header-bar__left { font-weight: bold; }
-  .lp-header-bar__right { opacity: 0.8; }
+  .lp-header-bar__right { 
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.9;
+  }
+  .lp-trending-icon {
+    width: 24px;
+    height: auto;
+  }
   
   .lp-hero {
     max-width: 800px;
@@ -45,13 +54,29 @@
     margin-bottom: 20px;
   }
   .lp-hero__author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
     font-size: 14px;
     color: #666;
     margin-bottom: 30px;
   }
-  .lp-hero__image {
+  .lp-hero__author-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .lp-hero__video {
     max-width: 100%;
     border-radius: 12px;
+    margin-bottom: 30px;
+  }
+  .lp-hero__logos {
+    max-width: 100%;
+    margin-top: 20px;
+    opacity: 0.8;
   }
   
   @media (max-width: 749px) {
@@ -62,7 +87,10 @@
 <section class="lp-advertorial-header">
   <div class="lp-header-bar">
     <div class="lp-header-bar__left">{{ section.settings.advertorial_label }}</div>
-    <div class="lp-header-bar__right">{{ 'now' | date: "%B %d, %Y" }} | {{ section.settings.right_label }}</div>
+    <div class="lp-header-bar__right">
+      <img src="{{ 'lp-trending-us-icon.png' | asset_url }}" alt="Trending" class="lp-trending-icon">
+      <span>{{ 'now' | date: "%B %d, %Y" }} | {{ section.settings.right_label }}</span>
+    </div>
   </div>
   
   <div class="lp-hero">
@@ -78,24 +106,15 @@
     </div>
     
     <div class="lp-hero__author">
-      By {{ section.settings.author_name }} | {{ section.settings.author_title }}
+      <img src="{{ 'lp-dr-mark-gabriel.png' | asset_url }}" alt="Dr. Mark Gabriel" class="lp-hero__author-image">
+      <span>By {{ section.settings.author_name }} | {{ section.settings.author_title }}</span>
     </div>
     
-    {%- if section.settings.hero_image != blank -%}
-      <img 
-        src="{{ section.settings.hero_image | image_url: width: 1500 }}"
-        alt="{{ section.settings.headline }}"
-        class="lp-hero__image"
-        loading="lazy"
-      >
-    {%- else -%}
-      <img 
-        src="{{ 'lp-hero-03-main-feature-graphic.png' | asset_url }}"
-        alt="{{ section.settings.headline }}"
-        class="lp-hero__image"
-        loading="lazy"
-      >
-    {%- endif -%}
+    <video class="lp-hero__video" autoplay muted loop playsinline>
+      <source src="{{ 'lp-hero-video.mp4' | asset_url }}" type="video/mp4">
+    </video>
+    
+    <img src="{{ 'lp-as-seen-on-logos.png' | asset_url }}" alt="As seen on major publications" class="lp-hero__logos">
   </div>
 </section>
 
