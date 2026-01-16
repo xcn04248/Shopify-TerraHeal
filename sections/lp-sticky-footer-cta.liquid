@@ -1,0 +1,80 @@
+{%- style -%}
+  .lp-sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: #fff;
+    padding: 15px 20px;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .lp-sticky-cta__btn {
+    display: block;
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+  }
+  .lp-sticky-cta__btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.5);
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4); }
+    50% { box-shadow: 0 4px 25px rgba(40, 167, 69, 0.6); }
+  }
+  
+  /* Add padding to body to prevent content from being hidden behind sticky CTA */
+  body {
+    padding-bottom: 80px;
+  }
+  
+  @media (max-width: 749px) {
+    .lp-sticky-cta__btn { font-size: 16px; padding: 12px 25px; }
+  }
+{%- endstyle -%}
+
+<div class="lp-sticky-cta">
+  <a href="{{ section.settings.cta_link }}" class="lp-sticky-cta__btn">
+    {{ section.settings.cta_text }}
+  </a>
+</div>
+
+{% schema %}
+{
+  "name": "LP Sticky Footer CTA",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button Text",
+      "default": "GET MY SPECIAL DEAL NOW!"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "LP Sticky Footer CTA"
+    }
+  ]
+}
+{% endschema %}

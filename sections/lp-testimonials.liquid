@@ -1,0 +1,173 @@
+{%- style -%}
+  .lp-testimonial {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  .lp-testimonial__card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .lp-testimonial__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .lp-testimonial__title {
+    font-weight: bold;
+    font-size: 18px;
+    color: #1a1a1a;
+  }
+  .lp-testimonial__stars {
+    color: #f5a623;
+    font-size: 16px;
+  }
+  .lp-testimonial__meta {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  .lp-testimonial__verified {
+    color: #28a745;
+    font-weight: 500;
+  }
+  .lp-testimonial__body {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  .lp-testimonial__helpful {
+    font-size: 13px;
+    color: #666;
+  }
+  .lp-testimonial__quote {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.4;
+    margin: 40px 0;
+  }
+  
+  @media (max-width: 749px) {
+    .lp-testimonial__quote { font-size: 20px; padding: 20px; }
+  }
+{%- endstyle -%}
+
+<section class="lp-testimonial">
+  {%- if section.settings.section_title != blank -%}
+    <h2 style="text-align: center; margin-bottom: 30px; font-size: 28px;">{{ section.settings.section_title }}</h2>
+  {%- endif -%}
+  
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when 'testimonial' -%}
+        <div class="lp-testimonial__card" {{ block.shopify_attributes }}>
+          <div class="lp-testimonial__header">
+            <span class="lp-testimonial__title">{{ block.settings.title }}</span>
+            <span class="lp-testimonial__stars">★★★★★</span>
+          </div>
+          <div class="lp-testimonial__meta">
+            Reviewed in the United States on {{ block.settings.date }}
+            <span class="lp-testimonial__verified">✓ Verified Purchase</span>
+          </div>
+          <div class="lp-testimonial__body">
+            {{ block.settings.body }}
+          </div>
+          <div class="lp-testimonial__helpful">
+            {{ block.settings.helpful_count }} people found this helpful
+          </div>
+        </div>
+      
+      {%- when 'quote' -%}
+        <div class="lp-testimonial__quote" {{ block.shopify_attributes }}>
+          "{{ block.settings.quote_text }}"
+        </div>
+    {%- endcase -%}
+  {%- endfor -%}
+</section>
+
+{% schema %}
+{
+  "name": "LP Testimonials",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "REAL RESULTS FROM REAL PATIENTS"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Review Title",
+          "default": "It's definitely worth every cent!"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author Name",
+          "default": "Maria L., Age 45"
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Review Date",
+          "default": "June 05, 2024"
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "Review Body"
+        },
+        {
+          "type": "text",
+          "id": "helpful_count",
+          "label": "Helpful Count",
+          "default": "76"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "name": "Featured Quote",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote_text",
+          "label": "Quote Text",
+          "default": "The Results Have Changed My Life! I've Lost 40Lbs Since Being Able to Move Properly!"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "LP Testimonials",
+      "blocks": [
+        {"type": "testimonial"},
+        {"type": "quote"},
+        {"type": "testimonial"}
+      ]
+    }
+  ]
+}
+{% endschema %}

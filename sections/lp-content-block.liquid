@@ -1,0 +1,192 @@
+{%- style -%}
+  .lp-content-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  .lp-content-section--bg-light {
+    background: #f9f9f9;
+    max-width: 100%;
+  }
+  .lp-content-section--bg-light .lp-content-section__inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .lp-content-section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+  .lp-content-section h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 30px 0 15px;
+    line-height: 1.3;
+  }
+  .lp-content-section p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  .lp-content-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  .lp-content-section li {
+    font-size: 18px;
+    line-height: 1.6;
+    padding: 10px 0 10px 30px;
+    position: relative;
+  }
+  .lp-content-section li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #28a745;
+    font-weight: bold;
+  }
+  .lp-content-section--pain li::before {
+    content: "✗";
+    color: #dc3545;
+  }
+  .lp-content-section__highlight {
+    background: #e8f5e9;
+    border-left: 4px solid #28a745;
+    padding: 20px;
+    margin: 20px 0;
+    font-size: 18px;
+  }
+  .lp-content-section__image {
+    max-width: 100%;
+    border-radius: 12px;
+    margin: 30px 0;
+  }
+  .lp-content-section__video {
+    width: 100%;
+    border-radius: 12px;
+    margin: 30px 0;
+  }
+  
+  @media (max-width: 749px) {
+    .lp-content-section h2 { font-size: 24px; }
+    .lp-content-section h3 { font-size: 20px; }
+    .lp-content-section p, .lp-content-section li { font-size: 16px; }
+  }
+{%- endstyle -%}
+
+<section class="lp-content-section{% if section.settings.background == 'light' %} lp-content-section--bg-light{% endif %}{% if section.settings.list_style == 'pain' %} lp-content-section--pain{% endif %}">
+  <div class="lp-content-section__inner">
+    {%- if section.settings.subheading != blank -%}
+      <h3>{{ section.settings.subheading }}</h3>
+    {%- endif -%}
+    
+    {%- if section.settings.heading != blank -%}
+      <h2>{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    
+    {%- if section.settings.content != blank -%}
+      <div class="lp-content-section__body">
+        {{ section.settings.content }}
+      </div>
+    {%- endif -%}
+    
+    {%- if section.settings.highlight_text != blank -%}
+      <div class="lp-content-section__highlight">
+        {{ section.settings.highlight_text }}
+      </div>
+    {%- endif -%}
+    
+    {%- if section.settings.image != blank -%}
+      <img 
+        src="{{ section.settings.image | image_url: width: 1200 }}"
+        alt="{{ section.settings.image_alt | default: section.settings.heading }}"
+        class="lp-content-section__image"
+        loading="lazy"
+      >
+    {%- endif -%}
+    
+    {%- if section.settings.video_url != blank -%}
+      <video 
+        class="lp-content-section__video"
+        autoplay 
+        muted 
+        loop 
+        playsinline
+      >
+        <source src="{{ section.settings.video_url }}" type="video/mp4">
+      </video>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "LP Content Block",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Background",
+      "options": [
+        {"value": "white", "label": "White"},
+        {"value": "light", "label": "Light Gray"}
+      ],
+      "default": "white"
+    },
+    {
+      "type": "select",
+      "id": "list_style",
+      "label": "List Style",
+      "options": [
+        {"value": "benefit", "label": "Benefits (✓)"},
+        {"value": "pain", "label": "Pain Points (✗)"}
+      ],
+      "default": "benefit"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "textarea",
+      "id": "highlight_text",
+      "label": "Highlight Box Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image Alt Text"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "LP Content Block"
+    }
+  ]
+}
+{% endschema %}

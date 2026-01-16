@@ -1,0 +1,203 @@
+{%- style -%}
+  .lp-pricing {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  .lp-pricing__urgency {
+    background: #fff3cd;
+    border: 2px dashed #ffc107;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .lp-pricing__box {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 3px solid #28a745;
+    border-radius: 16px;
+    padding: 40px 30px;
+    margin-bottom: 30px;
+  }
+  .lp-pricing__original {
+    font-size: 24px;
+    color: #999;
+    text-decoration: line-through;
+    margin-bottom: 10px;
+  }
+  .lp-pricing__current {
+    font-size: 48px;
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 10px;
+  }
+  .lp-pricing__discount {
+    display: inline-block;
+    background: #dc3545;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .lp-pricing__cta {
+    display: block;
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 20px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    margin: 30px auto;
+    max-width: 500px;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+    transition: all 0.3s ease;
+  }
+  .lp-pricing__cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.5);
+  }
+  .lp-pricing__guarantee {
+    background: #e8f5e9;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 30px 0;
+  }
+  .lp-pricing__guarantee h3 {
+    color: #28a745;
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+  .lp-pricing__badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  .lp-pricing__badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #666;
+  }
+  .lp-pricing__badge svg {
+    color: #28a745;
+    width: 20px;
+    height: 20px;
+  }
+  
+  @media (max-width: 749px) {
+    .lp-pricing__current { font-size: 36px; }
+    .lp-pricing__cta { font-size: 18px; padding: 15px 30px; }
+  }
+{%- endstyle -%}
+
+<section class="lp-pricing">
+  {%- if section.settings.urgency_text != blank -%}
+    <div class="lp-pricing__urgency">
+      ⚠️ {{ section.settings.urgency_text }}
+    </div>
+  {%- endif -%}
+  
+  <div class="lp-pricing__box">
+    <div class="lp-pricing__original">${{ section.settings.original_price }}</div>
+    <div class="lp-pricing__current">${{ section.settings.sale_price }}</div>
+    <span class="lp-pricing__discount">{{ section.settings.discount_label }}</span>
+    
+    <a href="{{ section.settings.cta_link }}" class="lp-pricing__cta">
+      {{ section.settings.cta_text }}
+    </a>
+  </div>
+  
+  <div class="lp-pricing__guarantee">
+    <h3>{{ section.settings.guarantee_title }}</h3>
+    <p>{{ section.settings.guarantee_text }}</p>
+  </div>
+  
+  <div class="lp-pricing__badges">
+    <div class="lp-pricing__badge">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      90 Day Money Back Guarantee
+    </div>
+    <div class="lp-pricing__badge">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+      Safe and Secure Checkout
+    </div>
+    <div class="lp-pricing__badge">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+      No-Hassle Returns
+    </div>
+    <div class="lp-pricing__badge">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M19.15 8a2 2 0 0 0-1.72-1H15V5a2 2 0 0 0-2-2H3a2 2 0 0 0-2 2v9h2a3 3 0 0 0 6 0h2a3 3 0 0 0 6 0h2v-3.28a1.71 1.71 0 0 0-.15-.72l-1.72-2zm-9 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
+      Fast Shipping
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "LP Pricing CTA",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "urgency_text",
+      "label": "Urgency Text",
+      "default": "We Might Sell Out By Tomorrow… Or Maybe Even Today!"
+    },
+    {
+      "type": "text",
+      "id": "original_price",
+      "label": "Original Price",
+      "default": "139"
+    },
+    {
+      "type": "text",
+      "id": "sale_price",
+      "label": "Sale Price",
+      "default": "69"
+    },
+    {
+      "type": "text",
+      "id": "discount_label",
+      "label": "Discount Label",
+      "default": "50% OFF - LIMITED TIME"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Button Text",
+      "default": "GET 50% OFF The Grounding Co Mat Now!"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
+    },
+    {
+      "type": "text",
+      "id": "guarantee_title",
+      "label": "Guarantee Title",
+      "default": "Try the Grounding Mat for 90 Days, Completely Risk-Free!"
+    },
+    {
+      "type": "textarea",
+      "id": "guarantee_text",
+      "label": "Guarantee Text",
+      "default": "If you're dissatisfied with the health benefits in any way, just let us know and get a full refund. No questions asked."
+    }
+  ],
+  "presets": [
+    {
+      "name": "LP Pricing CTA"
+    }
+  ]
+}
+{% endschema %}

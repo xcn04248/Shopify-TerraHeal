@@ -1,0 +1,162 @@
+{%- style -%}
+  .lp-header-bar {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .lp-header-bar__left { font-weight: bold; }
+  .lp-header-bar__right { opacity: 0.8; }
+  
+  .lp-hero {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  .lp-hero__rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #666;
+  }
+  .lp-hero__stars { color: #f5a623; }
+  .lp-hero__headline {
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+  }
+  .lp-hero__warning {
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    padding: 15px 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  .lp-hero__author {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  .lp-hero__image {
+    max-width: 100%;
+    border-radius: 12px;
+  }
+  
+  @media (max-width: 749px) {
+    .lp-hero__headline { font-size: 24px; }
+  }
+{%- endstyle -%}
+
+<section class="lp-advertorial-header">
+  <div class="lp-header-bar">
+    <div class="lp-header-bar__left">{{ section.settings.advertorial_label }}</div>
+    <div class="lp-header-bar__right">{{ 'now' | date: "%B %d, %Y" }} | {{ section.settings.right_label }}</div>
+  </div>
+  
+  <div class="lp-hero">
+    <div class="lp-hero__rating">
+      <span class="lp-hero__stars">★★★★★</span>
+      <span>{{ section.settings.rating_count }} Ratings</span>
+    </div>
+    
+    <h1 class="lp-hero__headline">{{ section.settings.headline }}</h1>
+    
+    <div class="lp-hero__warning">
+      <strong>WARNING:</strong> {{ section.settings.warning_text }}
+    </div>
+    
+    <div class="lp-hero__author">
+      By {{ section.settings.author_name }} | {{ section.settings.author_title }}
+    </div>
+    
+    {%- if section.settings.hero_image != blank -%}
+      <img 
+        src="{{ section.settings.hero_image | image_url: width: 1500 }}"
+        alt="{{ section.settings.headline }}"
+        class="lp-hero__image"
+        loading="lazy"
+      >
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "LP Advertorial Hero",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Advertorial Bar"
+    },
+    {
+      "type": "text",
+      "id": "advertorial_label",
+      "label": "Advertorial Label",
+      "default": "ADVERTORIAL"
+    },
+    {
+      "type": "text",
+      "id": "right_label",
+      "label": "Right Label",
+      "default": "Consumer Health Report"
+    },
+    {
+      "type": "header",
+      "content": "Hero Content"
+    },
+    {
+      "type": "text",
+      "id": "rating_count",
+      "label": "Rating Count",
+      "default": "4,897"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "headline",
+      "label": "Headline",
+      "default": "Leading Physical Therapist Discovers - Creating <strong>Immediate Relief</strong> of Edema in Legs & Feet"
+    },
+    {
+      "type": "textarea",
+      "id": "warning_text",
+      "label": "Warning Text",
+      "default": "If lymphedema has left you with heavy, painful, swollen limbs - and nothing seems to help - this could be the most important article you'll ever read..."
+    },
+    {
+      "type": "text",
+      "id": "author_name",
+      "label": "Author Name",
+      "default": "Dr. Mark Gabriel"
+    },
+    {
+      "type": "text",
+      "id": "author_title",
+      "label": "Author Title",
+      "default": "Physical Therapist"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "LP Advertorial Hero"
+    }
+  ]
+}
+{% endschema %}
