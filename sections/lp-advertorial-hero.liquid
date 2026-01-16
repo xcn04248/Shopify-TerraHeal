@@ -88,6 +88,13 @@
         class="lp-hero__image"
         loading="lazy"
       >
+    {%- else -%}
+      <img 
+        src="{{ 'lp-hero-03-main-feature-graphic.png' | asset_url }}"
+        alt="{{ section.settings.headline }}"
+        class="lp-hero__image"
+        loading="lazy"
+      >
     {%- endif -%}
   </div>
 </section>
