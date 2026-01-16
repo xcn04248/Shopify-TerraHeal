@@ -187,10 +187,10 @@
             "content": "<p>So why movement?</p><p>When you take a step, you're causing the muscles in your calves to tighten.</p><p>This compression will create natural stimulus to force the fluid that's been built up in your legs over time upwards.</p><p>But if you're already reaching stage 4 and your lower limbs have swollen like balloons - we're not expecting you to get off your couch and walk 5km each day. We already know that's practically impossible when your legs feel like exploding at the slightest touch...</p><p>So what other options are available??</p><p>Keep reading.</p>"
           }
         },
-        "solution_details_video": {
-          "type": "video",
+        "solution_details_img": {
+          "type": "image",
           "settings": {
-            "video_asset": "lp-cellular-signal-video.mp4"
+            "asset_image": "lp-lymphatic-swollen-composite.png"
           }
         }
       },
@@ -198,7 +198,7 @@
         "solution_intro",
         "movement_missing_video",
         "solution_details_text",
-        "solution_details_video"
+        "solution_details_img"
       ]
     },
     "content_7_white": {
