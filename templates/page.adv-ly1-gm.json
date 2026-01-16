@@ -18,7 +18,15 @@
       "settings": {
         "background": "white",
         "list_style": "pain",
-        "content": "<p>Hi, I'm Dr. Mark Gabriel, and as a lymphedema specialist with over 11 years of clinical experience, I've helped thousands of patients struggling with this debilitating condition. But what most of my patients never knew was that I too suffered silently with lymphedema for years.</p><p>If you're reading this, you know exactly what I mean...</p><ul><li>Chronic leg swelling</li><li>Persistent fluid buildup</li><li>Nerve-related pain and discomfort</li><li>Persistent heel pain</li></ul><p>Whatever the issue, I've seen them all. For many of my patients, lymphedema was more than just physical suffering – it stripped them of their dignity, independence, and joy in life.</p>"
+        "content": "<p>Hi, I'm Dr. Mark Gabriel, and as a lymphedema specialist with over 11 years of clinical experience, I've helped thousands of patients struggling with this debilitating condition. But what most of my patients never knew was that I too suffered silently with lymphedema for years.</p><p>If you're reading this, you know exactly what I mean...</p><ul><li>Chronic leg swelling</li><li>Persistent fluid buildup</li><li>Nerve-related pain and discomfort</li><li>Persistent heel pain</li></ul><p>Whatever the issue, I've seen them all. For many of my patients, lymphedema was more than just physical suffering – it stripped them of their dignity, independence, and joy in life.</p><p>Some patients were so bad that they had body parts affected where...</p>"
+      }
+    },
+    "limb_progression": {
+      "type": "lp-content-block",
+      "settings": {
+        "background": "white",
+        "heading": "You Couldn't Tell What Limb You We're Looking At",
+        "asset_image": "lp-limb-progression.png"
       }
     },
     "discovery": {
@@ -186,6 +194,7 @@
   "order": [
     "hero",
     "intro",
+    "limb_progression",
     "discovery",
     "education",
     "analogy",
