@@ -26,7 +26,8 @@
       "settings": {
         "background": "white",
         "heading": "You Couldn't Tell What Limb You We're Looking At",
-        "asset_image": "lp-limb-progression.png"
+        "asset_image": "lp-limb-progression.png",
+        "content": "<p>I witnessed their daily struggles as they tried countless treatments, only to find temporary relief at best.</p>"
       }
     },
     "discovery": {
