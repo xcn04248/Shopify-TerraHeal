@@ -39,16 +39,22 @@
         "content": "<p>Documented studies showed that lymphedema was extremely rare in previous generations. This wasn't just coincidence - it was a crucial insight into how our modern lifestyle has disrupted our body's natural healing processes.</p><p>This observation led me to identify what I now call <strong>\"Nocturnal Lymphatic Disconnection Syndrome\"</strong> - a silent condition affecting more and more people in our modern times.</p>"
       }
     },
-    "education": {
+    "education_system": {
       "type": "lp-content-block",
       "settings": {
         "background": "white",
         "subheading": "So Let me explain this in a way that will make perfect sense...",
         "heading": "The Lymphatic System - Your Body's Hidden Drainage Network",
-        "content": "<p>Most people only know about blood circulation. How good flow of blood is important for maintaining your health...</p><p>But did you know that there's another system that is actually just as important to getting rid of waste and toxins in your body? That's called the <strong>Lymphatic System</strong>.</p><p>Your lymphatic system is like a sophisticated electrical pump network that removes excess fluid from your body. It's mainly responsible for fighting infection throughout your internal system, and regulating body fluid levels.</p>",
-        "highlight_text": "So swelling could simply be seen as a build up of this fluid. That fluid that normally travels through the lymph vessels and nodes becomes trapped.",
-        "asset_image": "lp-lymphatic-obstruction.png",
-        "video_asset": "lp-fluid-buildup-video.mp4"
+        "content": "<p>Most people only know about blood circulation. How good flow of blood is important for maintaining your health...</p><p>But did you know that there's another system that is actually just as important to getting rid of waste and toxins in your body? That's called the <strong>Lymphatic System</strong>.</p><p>Your lymphatic system is like a sophisticated electrical pump network that removes excess fluid from your body. It's mainly responsible for fighting infection throughout your internal system, and regulating body fluid levels.</p>"
+      }
+    },
+    "education_swelling": {
+      "type": "lp-content-block",
+      "settings": {
+        "background": "white",
+        "heading": "So How Does This Link Back To Swelling?",
+        "content": "<p>Well earlier, we said that a healthy system involves biological drainage of the fluid.</p><p>So swelling could simply be seen as a build up of this fluid. That fluid that normally travels through the lymph vessels and nodes becomes trapped.</p>",
+        "asset_image": "lp-education-feet-3d.png"
       }
     },
     "analogy": {
@@ -197,7 +203,8 @@
     "intro",
     "limb_progression",
     "discovery",
-    "education",
+    "education_system",
+    "education_swelling",
     "analogy",
     "stage4_warning",
     "solution_intro",
