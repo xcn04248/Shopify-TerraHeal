@@ -1,5 +1,5 @@
 {
-  "name": "Advertorial Landing Page V4",
+  "name": "Advertorial Landing Page V5",
   "sections": {
     "hero": {
       "type": "lp-advertorial-hero",
@@ -152,7 +152,7 @@
         "stage4_warning_img": {
           "type": "image",
           "settings": {
-            "asset_image": "lp-edema-example-2.png"
+            "asset_image": "lp-stage4-progression.png"
           }
         }
       },
@@ -386,6 +386,114 @@
         "dream_state"
       ]
     },
+    "content_cost_urgency": {
+      "type": "lp-content-block",
+      "settings": {
+        "background": "light"
+      },
+      "blocks": {
+        "cost_intro": {
+          "type": "text",
+          "settings": {
+            "content": "<p>.. and the cost?</p><p>That used to be a tricky question...</p><p><strong>It required a lot of time and money to manufacture this device.</strong></p><p>and given that it was going to be placed against my reputation, it couldn't be any substandard product.</p><p>As a result, we could only manufacture in small batches that would sell out pretty quickly...</p><p>So we took our efforts to find reliable partners to meet this demand from more and more people...</p><p><strong>But somehow we're still running out time and time again!</strong></p><p>So if you're reading this, it means that we should have some in stock!</p><p>Otherwise we would be taking this down to ensure we aren't disappointing any customers...</p>"
+          }
+        },
+        "urgency_heading": {
+          "type": "text",
+          "settings": {
+            "heading": "We Might Sell Out By Tomorrow… Or Maybe Even Today"
+          }
+        },
+        "warehouse_img": {
+          "type": "image",
+          "settings": {
+            "asset_image": "lp-warehouse-stock.jpg"
+          }
+        },
+        "urgency_details": {
+          "type": "text",
+          "settings": {
+            "content": "<p>.. and look.. if that happens?</p><p><strong>The sourcing of materials can take weeks...</strong></p><p>Production could be even longer!</p><p>That's why I simply want you to pay attention and jump on this opportunity right now!</p><p>Chances are that you have tried other methods, otherwise you would simply be deciding to live in this world of pain.</p><p><strong>So let's work together - here's how you can get your hands on a Grounding Mat today!</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "cost_intro",
+        "urgency_heading",
+        "warehouse_img",
+        "urgency_details"
+      ]
+    },
+    "content_official_only": {
+      "type": "lp-content-block",
+      "settings": {
+        "background": "white"
+      },
+      "blocks": {
+        "official_heading": {
+          "type": "text",
+          "settings": {
+            "heading": "The Grounding Co Mats Are Only Available On Our Official Website"
+          }
+        },
+        "official_comparison_img": {
+          "type": "image",
+          "settings": {
+            "asset_image": "lp-official-vs-fake.png"
+          }
+        },
+        "official_text": {
+          "type": "text",
+          "settings": {
+            "content": "<p>The true benefits only come from authentic goods!</p><p>This means that you should only be trusting your purchase from the official website from The Grounding Co.</p><p><strong>We only currently sell it on our website for $139.</strong></p><p>Considering this is a one time cost, it's relatively a small price to pay for almost immediately pain relief.</p><p>Well today only, The Grounding Co. are willing to do even better!</p>"
+          }
+        },
+        "price_reveal": {
+          "type": "text",
+          "settings": {
+            "heading": "Only $69 Which is 1/2 The Cost Originally Set",
+            "content": "<p>But discounted, doesn't mean it's cheap.</p><p>It simply means that I've got enough pull in being able to give this to you!</p><p>The one who has to experience pain in their life day in, day out.</p><p>The one who has to feel embarrassed when receiving gazes from surrounding people</p><p>The one who simply just <strong>wants to look and feel normal.</strong></p><p>So this is likely a rare deal you'll never find.</p>"
+          }
+        },
+        "final_video": {
+          "type": "video",
+          "settings": {
+            "video_asset": "lp-final-demo-video.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "official_heading",
+        "official_comparison_img",
+        "official_text",
+        "price_reveal",
+        "final_video"
+      ]
+    },
+    "content_closing_pitch": {
+      "type": "lp-content-block",
+      "settings": {
+        "background": "light"
+      },
+      "blocks": {
+        "closing_text": {
+          "type": "text",
+          "settings": {
+            "content": "<p>So if you're prepared to take me up on my offer of a better lifestyle without the difficulty attached...</p><p>Then this is truly the best deal you'll see.</p><p>As mentioned earlier, we're aiming to increase our production and manufacturing, but it seems more people in this world are experiencing the same problems as you?</p><p><strong>Wonder why right?</strong></p><p>But just because you're feeling so much pain and embarrassment...</p><p>Doesn't mean it has to be forever!</p><p><strong>Just click the big button below and claim what's rightfully yours</strong></p>"
+          }
+        },
+        "limited_discount": {
+          "type": "text",
+          "settings": {
+            "heading": "I'm Offering an Exclusive Limited-Time Discount to Let You Get a Grounding Mat at 50% OFF"
+          }
+        }
+      },
+      "block_order": [
+        "closing_text",
+        "limited_discount"
+      ]
+    },
     "pricing": {
       "type": "lp-pricing-cta",
       "settings": {
@@ -394,33 +502,237 @@
         "sale_price": "69",
         "discount_label": "50% OFF - LIMITED TIME",
         "cta_text": "GET 50% OFF The Grounding Co Mat Now!",
-        "cta_link": "shopify:\/\/products\/terra-earthlink-grounding-mat",
-        "guarantee_title": "Try the Grounding Mat for 90 Days, Completely Risk-Free!",
-        "guarantee_text": "If you've given at least 30 days and you're dissatisfied with the health benefits in any way, just let the team know at The Grounding Co and get a full refund. No questions asked."
+        "cta_link": "shopify://products/terra-earthlink-grounding-mat",
+        "guarantee_title": "Try the Grounding Mat for 90 Days and Nights, Completely 100% Risk-Free!",
+        "guarantee_text": "So you not only get to experience the relief for such a low cost... You also get 3 months worth of time to try the Grounding mat out to see if it truly works for you. Everyone is built different, and if it truly lives up to it's promise, then you're welcome to hold onto it and continue to reap the benefits. But if you've given at least 30 days and you're dissatisfied with the health benefits in any way, just let the team know at The Grounding Co and get a full refund. No questions asked."
       }
     },
-    "content_12_light": {
+    "content_multiple_mats": {
+      "type": "lp-content-block",
+      "settings": {
+        "background": "white"
+      },
+      "blocks": {
+        "contact_info": {
+          "type": "text",
+          "settings": {
+            "content": "<p>because the team is easily reachable for any help or questions you have.</p><p>Just email them at admin@thegrounding.co</p><p><strong>Truly a RISK-FREE Opportunity!</strong></p>"
+          }
+        },
+        "option_choice_img": {
+          "type": "image",
+          "settings": {
+            "asset_image": "lp-option-choice.png"
+          }
+        },
+        "multiple_mats_pitch": {
+          "type": "text",
+          "settings": {
+            "heading": "Most people end up ordering multiple Grounding Mats",
+            "content": "<p>That's because it's actually easier to leave them around the rooms you find yourself spending the most time.</p><p>It's also because it makes an excellent present for someone you care about.</p><p><strong>Lastly, you stand to save even more money!</strong></p><p>So if you know anyone, that might be suffering from the same problems and simply has not had the chance to tell you...</p><p>(you can tell by looking right?)</p><p>Then just do them a favour and pass on the good word</p><p>Or you can just get more for yourself and truly experience the healing benefits everywhere you go!</p><p>So just go for it.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "contact_info",
+        "option_choice_img",
+        "multiple_mats_pitch"
+      ]
+    },
+    "content_alternative": {
       "type": "lp-content-block",
       "settings": {
         "background": "light"
       },
       "blocks": {
-        "disclaimer": {
+        "alternative_pitch": {
           "type": "text",
           "settings": {
-            "content": "<p><strong>MEDICAL & HEALTH DISCLAIMER:</strong> All information and results presented on this site are for informational purposes only and are not intended to diagnose, treat, cure, or prevent any disease. Results may vary from person to person. If you have a medical concern, consult with your health care provider. Never disregard professional medical advice because of something you have read here.</p>"
+            "content": "<p>You owe it to yourself and your family to make a change.</p><p>That's not by doing the same thing you've always been doing...</p><p>But by actually taking different approach to better health.</p><p><strong>The Alternative approach.</strong></p><p>and if it doesn't feel right and meet the claims we've made...</p><p>You get your money back and continue on with your life.</p>"
+          }
+        },
+        "update_banner": {
+          "type": "text",
+          "settings": {
+            "heading": "UPDATE: As of November 19, 2024 - The demand for the The Grounding Co Mat has increased dramatically and inventory has been flying off the shelves. Order your own for 50% OFF + FAST SHIPPING before it's too late.",
+            "content": "<p><strong>Lock in your order while you can to get 50% OFF + FAST SHIPPING to USA</strong></p><p><strong style=\"color: red;\">NOTE: This deal is NOT available on Amazon or eBay.</strong></p>"
+          }
+        },
+        "product_with_badges": {
+          "type": "image",
+          "settings": {
+            "asset_image": "lp-product-rolled.webp"
           }
         }
       },
       "block_order": [
-        "disclaimer"
+        "alternative_pitch",
+        "update_banner",
+        "product_with_badges"
+      ]
+    },
+    "pricing_final": {
+      "type": "lp-pricing-cta",
+      "settings": {
+        "urgency_text": "",
+        "original_price": "139",
+        "sale_price": "69",
+        "discount_label": "50% OFF - LIMITED TIME",
+        "cta_text": "GET 50% OFF The Grounding Co Mat Now!",
+        "cta_link": "shopify://products/terra-earthlink-grounding-mat",
+        "guarantee_title": "",
+        "guarantee_text": ""
+      }
+    },
+    "fb_comments": {
+      "type": "lp-facebook-comments",
+      "settings": {
+        "title": "Comments"
+      },
+      "blocks": {
+        "comment_1": {
+          "type": "comment",
+          "settings": {
+            "author": "Wilbur Dudley",
+            "avatar_asset": "lp-avatar-wilbur.jpg",
+            "comment_text": "Can anybody vouch for this?",
+            "likes_count": "4",
+            "time_ago": "39 min"
+          }
+        },
+        "comment_2": {
+          "type": "comment",
+          "settings": {
+            "author": "Mary Vensonry",
+            "avatar_asset": "lp-avatar-mary.jpg",
+            "comment_text": "The mat helps my feet and legs with my lymphedema. I walk a lot for my job and getting home and using it has really helped with the pain.",
+            "likes_count": "7",
+            "time_ago": "16 min"
+          }
+        },
+        "comment_3": {
+          "type": "comment",
+          "settings": {
+            "author": "Sam Stiff",
+            "avatar_asset": "lp-avatar-sam.jpg",
+            "comment_text": "I bought mine for the full price and now are 50% off? That's not fair!",
+            "likes_count": "4",
+            "time_ago": "51 min"
+          }
+        },
+        "comment_4": {
+          "type": "comment",
+          "settings": {
+            "author": "Skyler Gregory",
+            "avatar_asset": "lp-avatar-skyler.jpg",
+            "comment_text": "How long does shipping take??",
+            "likes_count": "1",
+            "time_ago": "1 h"
+          }
+        },
+        "comment_5": {
+          "type": "comment",
+          "settings": {
+            "author": "Aally Carterson",
+            "avatar_asset": "lp-avatar-aally.jpg",
+            "comment_text": "Hey Skyler, got mine after a week.",
+            "likes_count": "2",
+            "time_ago": "34 min",
+            "is_reply": true
+          }
+        },
+        "comment_6": {
+          "type": "comment",
+          "settings": {
+            "author": "Leonie Boyson",
+            "avatar_asset": "lp-avatar-leonie.jpg",
+            "comment_text": "I like the mat. It is very good for my foot pain. It is comfortable. I enjoy using it.",
+            "comment_image_asset": "lp-user-photo-leonie.webp",
+            "likes_count": "6",
+            "time_ago": "1 h"
+          }
+        },
+        "comment_7": {
+          "type": "comment",
+          "settings": {
+            "author": "Joy Rice",
+            "avatar_asset": "lp-avatar-joy.jpg",
+            "comment_text": "Don't laugh. I've been using one for six weeks. I feel like I'm 30 again. Hip pain GONE. Muscle aches GONE. My mood has improved. I feel much more energized. It took a couple days to feel good results fully though. Ignore this and laugh if it makes you feel superior, but I will still feel great. Up to you. I'm telling my friends and family.",
+            "comment_image_asset": "lp-user-photo-joy.jpg",
+            "likes_count": "13",
+            "time_ago": "1 h"
+          }
+        },
+        "comment_8": {
+          "type": "comment",
+          "settings": {
+            "author": "Niah Emershon",
+            "avatar_asset": "lp-avatar-niah.jpg",
+            "comment_text": "Hey Lois, this is what you need for better sleep than pills",
+            "likes_count": "2",
+            "time_ago": "2 h"
+          }
+        },
+        "comment_9": {
+          "type": "comment",
+          "settings": {
+            "author": "Daniel Gramp",
+            "avatar_asset": "lp-avatar-daniel.jpg",
+            "comment_text": "Wow, this is crazy, have ordered one now!",
+            "likes_count": "7",
+            "time_ago": "16 min"
+          }
+        }
+      },
+      "block_order": [
+        "comment_1",
+        "comment_2",
+        "comment_3",
+        "comment_4",
+        "comment_5",
+        "comment_6",
+        "comment_7",
+        "comment_8",
+        "comment_9"
+      ]
+    },
+    "content_footer": {
+      "type": "lp-content-block",
+      "settings": {
+        "background": "white"
+      },
+      "blocks": {
+        "references": {
+          "type": "text",
+          "settings": {
+            "content": "<p style=\"font-size: 10px; color: #666; font-style: italic;\">*Source: Review Article Integrative and lifestyle medicine strategies should include Earthing (grounding): Review of research evidence and clinical observations</p><p style=\"font-size: 10px; color: #666; font-style: italic;\">May-June 2020 Volume 16, Issue 3, Page 152-160: <a href=\"https://www.sciencedirect.com/science/article/pii/S1550830719305476\">https://www.sciencedirect.com/science/article/pii/S1550830719305476</a></p>"
+          }
+        },
+        "disclaimer": {
+          "type": "text",
+          "settings": {
+            "content": "<p><strong>MEDICAL & HEALTH DISCLAIMER:</strong> All information and results presented on this site are for informational purposes only and are not intended to diagnose, treat, cure, or prevent any disease. Results may vary from person to person.</p><p>If you or any other person has a medical concern, you should consult with your health care provider or seek other professional medical treatment. Never disregard professional medical advice or delay in seeking it because of something that have read on this page or in any linked materials. If you think you may have a medical emergency, call your doctor or emergency services immediately.</p><p style=\"font-weight: bold;\">© 2024 All Rights Reserved.</p>"
+          }
+        },
+        "dmca_badge": {
+          "type": "image",
+          "settings": {
+            "asset_image": "lp-dmca-badge.webp",
+            "alt": "DMCA Protected"
+          }
+        }
+      },
+      "block_order": [
+        "references",
+        "disclaimer",
+        "dmca_badge"
       ]
     },
     "sticky_cta": {
       "type": "lp-sticky-footer-cta",
       "settings": {
         "cta_text": "GET MY SPECIAL DEAL NOW!",
-        "cta_link": "shopify:\/\/products\/terra-earthlink-grounding-mat"
+        "cta_link": "shopify://products/terra-earthlink-grounding-mat"
       }
     }
   },
@@ -436,10 +748,17 @@
     "content_8_light",
     "content_9_white",
     "content_10_light",
-    "content_11_white",
     "testimonials",
+    "content_11_white",
+    "content_cost_urgency",
+    "content_official_only",
+    "content_closing_pitch",
     "pricing",
-    "content_12_light",
+    "content_multiple_mats",
+    "content_alternative",
+    "pricing_final",
+    "fb_comments",
+    "content_footer",
     "sticky_cta"
   ]
 }

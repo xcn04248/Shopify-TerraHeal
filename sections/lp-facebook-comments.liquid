@@ -1,0 +1,201 @@
+{%- style -%}
+  .lp-fb-comments {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f0f2f5;
+  }
+  .lp-fb-comments__title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1c1e21;
+  }
+  .lp-fb-comment {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  .lp-fb-comment--reply {
+    margin-left: 50px;
+  }
+  .lp-fb-comment__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  .lp-fb-comment__content {
+    flex: 1;
+  }
+  .lp-fb-comment__bubble {
+    background: #fff;
+    border-radius: 18px;
+    padding: 8px 12px;
+    display: inline-block;
+  }
+  .lp-fb-comment__author {
+    font-weight: 600;
+    font-size: 13px;
+    color: #050505;
+    margin-bottom: 2px;
+  }
+  .lp-fb-comment__text {
+    font-size: 14px;
+    color: #1c1e21;
+    line-height: 1.4;
+  }
+  .lp-fb-comment__image {
+    max-width: 170px;
+    border-radius: 8px;
+    margin-top: 8px;
+  }
+  .lp-fb-comment__actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: #65676b;
+    margin-top: 4px;
+    padding-left: 12px;
+  }
+  .lp-fb-comment__action {
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .lp-fb-comment__likes {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+  .lp-fb-comment__likes-icon {
+    width: 16px;
+    height: 16px;
+    background: #1877f2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .lp-fb-comment__likes-icon svg {
+    width: 10px;
+    height: 10px;
+    fill: #fff;
+  }
+  @media (max-width: 749px) {
+    .lp-fb-comment--reply {
+      margin-left: 30px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="lp-fb-comments">
+  {%- if section.settings.title != blank -%}
+    <h3 class="lp-fb-comments__title">{{ section.settings.title }}</h3>
+  {%- endif -%}
+  
+  {%- for block in section.blocks -%}
+    <div class="lp-fb-comment{% if block.settings.is_reply %} lp-fb-comment--reply{% endif %}" {{ block.shopify_attributes }}>
+      {%- if block.settings.avatar_asset != blank -%}
+        <img src="{{ block.settings.avatar_asset | asset_url }}" alt="{{ block.settings.author }}" class="lp-fb-comment__avatar" loading="lazy">
+      {%- else -%}
+        <img src="https://via.placeholder.com/40" alt="{{ block.settings.author }}" class="lp-fb-comment__avatar" loading="lazy">
+      {%- endif -%}
+      
+      <div class="lp-fb-comment__content">
+        <div class="lp-fb-comment__bubble">
+          <div class="lp-fb-comment__author">{{ block.settings.author }}</div>
+          <div class="lp-fb-comment__text">{{ block.settings.comment_text }}</div>
+        </div>
+        
+        {%- if block.settings.comment_image_asset != blank -%}
+          <img src="{{ block.settings.comment_image_asset | asset_url }}" alt="User photo" class="lp-fb-comment__image" loading="lazy">
+        {%- endif -%}
+        
+        <div class="lp-fb-comment__actions">
+          <span class="lp-fb-comment__action">Like</span>
+          <span class="lp-fb-comment__action">Reply</span>
+          {%- if block.settings.likes_count != blank -%}
+            <span class="lp-fb-comment__likes">
+              <span class="lp-fb-comment__likes-icon">
+                <svg viewBox="0 0 16 16"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zm3.7 7.3l-3 3a1 1 0 01-1.4 0l-1.5-1.5a1 1 0 111.4-1.4l.8.8 2.3-2.3a1 1 0 011.4 1.4z"/></svg>
+              </span>
+              {{ block.settings.likes_count }}
+            </span>
+          {%- endif -%}
+          <span>{{ block.settings.time_ago }}</span>
+        </div>
+      </div>
+    </div>
+  {%- endfor -%}
+</section>
+
+{% schema %}
+{
+  "name": "LP Facebook Comments",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Comments"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "comment",
+      "name": "Comment",
+      "settings": [
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author Name",
+          "default": "John Doe"
+        },
+        {
+          "type": "text",
+          "id": "avatar_asset",
+          "label": "Avatar Asset Filename",
+          "info": "e.g. lp-avatar-john.jpg"
+        },
+        {
+          "type": "textarea",
+          "id": "comment_text",
+          "label": "Comment Text"
+        },
+        {
+          "type": "text",
+          "id": "comment_image_asset",
+          "label": "Comment Image Asset (optional)",
+          "info": "For user-uploaded photos"
+        },
+        {
+          "type": "text",
+          "id": "likes_count",
+          "label": "Likes Count",
+          "default": "5"
+        },
+        {
+          "type": "text",
+          "id": "time_ago",
+          "label": "Time Ago",
+          "default": "2h"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_reply",
+          "label": "Is Reply (indented)",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "LP Facebook Comments"
+    }
+  ]
+}
+{% endschema %}
