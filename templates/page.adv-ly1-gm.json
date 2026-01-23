@@ -555,7 +555,7 @@
           "type": "text",
           "settings": {
             "heading": "UPDATE: As of November 19, 2024 - The demand for the The Grounding Co Mat has increased dramatically and inventory has been flying off the shelves. Order your own for 50% OFF + FAST SHIPPING before it's too late.",
-            "content": "<p><strong>Lock in your order while you can to get 50% OFF + FAST SHIPPING to USA</strong></p><p><strong style=\"color: red;\">NOTE: This deal is NOT available on Amazon or eBay.</strong></p>"
+            "content": "<p><strong>Lock in your order while you can to get 50% OFF + FAST SHIPPING to USA</strong></p><p><strong>NOTE: This deal is NOT available on Amazon or eBay.</strong></p>"
           }
         },
         "product_with_badges": {
@@ -705,13 +705,13 @@
         "references": {
           "type": "text",
           "settings": {
-            "content": "<p style=\"font-size: 10px; color: #666; font-style: italic;\">*Source: Review Article Integrative and lifestyle medicine strategies should include Earthing (grounding): Review of research evidence and clinical observations</p><p style=\"font-size: 10px; color: #666; font-style: italic;\">May-June 2020 Volume 16, Issue 3, Page 152-160: <a href=\"https://www.sciencedirect.com/science/article/pii/S1550830719305476\">https://www.sciencedirect.com/science/article/pii/S1550830719305476</a></p>"
+            "content": "<p><em>*Source: Review Article Integrative and lifestyle medicine strategies should include Earthing (grounding): Review of research evidence and clinical observations</em></p><p><em>May-June 2020 Volume 16, Issue 3, Page 152-160: <a href=\"https://www.sciencedirect.com/science/article/pii/S1550830719305476\">https://www.sciencedirect.com/science/article/pii/S1550830719305476</a></em></p>"
           }
         },
         "disclaimer": {
           "type": "text",
           "settings": {
-            "content": "<p><strong>MEDICAL & HEALTH DISCLAIMER:</strong> All information and results presented on this site are for informational purposes only and are not intended to diagnose, treat, cure, or prevent any disease. Results may vary from person to person.</p><p>If you or any other person has a medical concern, you should consult with your health care provider or seek other professional medical treatment. Never disregard professional medical advice or delay in seeking it because of something that have read on this page or in any linked materials. If you think you may have a medical emergency, call your doctor or emergency services immediately.</p><p style=\"font-weight: bold;\">© 2024 All Rights Reserved.</p>"
+            "content": "<p><strong>MEDICAL & HEALTH DISCLAIMER:</strong> All information and results presented on this site are for informational purposes only and are not intended to diagnose, treat, cure, or prevent any disease. Results may vary from person to person.</p><p>If you or any other person has a medical concern, you should consult with your health care provider or seek other professional medical treatment. Never disregard professional medical advice or delay in seeking it because of something that have read on this page or in any linked materials. If you think you may have a medical emergency, call your doctor or emergency services immediately.</p><p><strong>© 2024 All Rights Reserved.</strong></p>"
           }
         },
         "dmca_badge": {
